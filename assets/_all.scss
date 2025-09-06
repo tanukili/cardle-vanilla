@@ -1,5 +1,9 @@
-@import "bootstrap/scss/functions";
+@import 'bootstrap/scss/functions';
 
 @import 'utils/variables';
 
-@import "bootstrap";
+@import 'bootstrap';
+
+h1 {
+  color: blue;
+}
