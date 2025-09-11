@@ -1,18 +1,25 @@
-.btn-outline-gray-400 {
-  color: $gray-500;
-
-  &:active,
-  &:focus,
-  &:hover {
-    color: $primary-700 !important;
-    background-color: $primary-100 !important;
-  }
+.btn-primary {
+  --bs-btn-color: var(--bs-primary-0);
+  --bs-btn-hover-color: var(--bs-primary-700);
+  --bs-btn-hover-bg: var(--bs-primary-100);
+  --bs-btn-hover-border-color: var(--bs-primary-100);
+  --bs-btn-active-color: var(--bs-primary-0);
+  --bs-btn-active-bg: var(--bs-primary-800);
+  --bs-btn-active-border-color: var(--bs-primary-800);
 }
 
 .btn-secondary {
-  &:active,
-  &:focus,
-  &:hover {
-    background-color: $secondary-500 !important;
-  }
+  --bs-btn-color: var(--bs-gray-0);
+  --bs-btn-hover-color: var(--bs-gray-0);
+  --bs-btn-hover-bg: var(--bs-secondary-500);
+  --bs-btn-hover-border-color: var(--bs-secondary-500);
+  --bs-btn-active-color: var(--bs-gray-0);
+}
+
+.btn-outline-gray-400 {
+  --bs-btn-color: var(--bs-gray-500);
+  --bs-btn-hover-color: var(--bs-primary-700);
+  --bs-btn-hover-bg: var(--bs-primary-100);
+  --bs-btn-active-color: var(--bs-primary-700);
+  --bs-btn-active-bg: var(--bs-primary-200);
 }

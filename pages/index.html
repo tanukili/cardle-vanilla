@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=check,star"
-    />
+    <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon" />
     <title>Cardle</title>
   </head>
   <body>
@@ -19,7 +16,7 @@
         <div class="d-flex flex-column justify-content-center px-7_5 px-md-0 h-100">
           <h1 class="fs-3xl fs-md-6xl mb-4 mb-md-8">卡片紀錄想法，讓知識自在成長</h1>
           <p class="fw-bold fs-l fs-md-3xl mb-8">把靈感拆解、連結、重組，打造專屬你的知識地圖。</p>
-          <button class="btn btn-primary align-self-md-start fs-md-xl py-md-4 px-md-6">立即開始</button>
+          <a href="#" class="btn btn-primary align-self-md-start fs-md-xl py-md-4 px-md-6">立即開始</a>
         </div>
       </div>
     </section>
@@ -556,7 +553,7 @@
                         </ul>
                       </div>
                       <!-- CTA 按鈕 -->
-                      <button class="btn btn-outline-gray-400 py-md-4 mt-auto w-100">立即註冊</button>
+                      <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100">立即註冊</a>
                     </div>
                   </div>
                   <div class="swiper-slide h-auto">
@@ -601,7 +598,7 @@
                         </ul>
                       </div>
                       <!-- CTA 按鈕 -->
-                      <button class="btn btn-secondary py-md-4 mt-auto w-100">升級方案（推薦）</button>
+                      <a href="#" class="btn btn-secondary py-md-4 mt-auto w-100">升級方案（推薦）</a>
                     </div>
                   </div>
                   <div class="swiper-slide h-auto">
@@ -644,7 +641,7 @@
                         </ul>
                       </div>
                       <!-- CTA 按鈕 -->
-                      <button class="btn btn-outline-gray-400 py-md-4 mt-auto w-100">升級方案</button>
+                      <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100">升級方案</a>
                     </div>
                   </div>
                 </div>
@@ -658,5 +655,41 @@
     <!-- 頁尾 -->
     <%- include('./layout/footer'); -%>
     <script type="module" src="../main.js"></script>
+    <script type="module">
+      // import Swiper JS
+      import Swiper from 'swiper/bundle';
+      // import Swiper styles
+      import 'swiper/css/bundle';
+
+      const functionSwiper = new Swiper('.function-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+
+        breakpoints: {
+          768: {
+            direction: 'vertical',
+          },
+        },
+      });
+
+      const commentSwiper = new Swiper('.comment-swiper', {
+        loop: true,
+        autoplay: true,
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+      });
+
+      const planSwiper = new Swiper('.plan-swiper', {
+        autoplay: true,
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+
+        breakpoints: {
+          992: {
+            spaceBetween: 40,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

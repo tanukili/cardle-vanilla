@@ -1,6 +1,10 @@
 // hero 區塊
 .hero {
-  background: url(/assets/images/index/hero.png) no-repeat center / cover;
+  background: url(/assets/images/index/hero.png) no-repeat center right 38% / cover;
+
+  @include media-breakpoint-up(sm) {
+    background-position: center;
+  }
 }
 
 // 什麼是「 卡片筆記 」

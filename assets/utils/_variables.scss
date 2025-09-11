@@ -407,8 +407,11 @@ $theme-colors: (
   'gray-1000': $gray-1000,
   'primary-0': $primary-0,
   'primary-100': $primary-100,
+  'primary-200': $primary-200,
+  'primary-700': $primary-700,
   'primary-800': $primary-800,
   'primary-900': $primary-900,
+  'secondary-500': $secondary-500,
 
   'tag-success': $tag-success,
   'tag-success-bg': $tag-success-bg,
@@ -715,7 +718,6 @@ $aspect-ratios: (
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:
-  // 'IBM Plex Mono',
   'Noto Sans TC',
   system-ui,
   -apple-system,
