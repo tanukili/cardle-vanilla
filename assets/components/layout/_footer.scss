@@ -1,0 +1,6 @@
+.community-list li:hover {
+  .community-link {
+    transition: transform 0.3s;
+    transform: translateY(-5px);
+  }
+}
