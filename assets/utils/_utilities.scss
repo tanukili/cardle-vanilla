@@ -19,5 +19,23 @@ $utilities: map-merge(
           responsive: true,
         )
       ),
+    'font-weight': map-merge(
+        map-get($utilities, 'font-weight'),
+        (
+          responsive: true,
+        )
+      ),
   )
 );
+
+.material-symbols-outlined.fill {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+.font-Manrope {
+  font-family: 'Manrope', 'sans-serif';
+}
