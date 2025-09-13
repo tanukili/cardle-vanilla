@@ -9,6 +9,7 @@
 $white: #fff !default;
 $gray-0: #fcfcfc !default; // custom
 $gray-50: #f7f7f7 !default; // custom
+$gray-98:  #fafafa !default; // custom
 $gray-100: #e7e7e7 !default; // custom
 $gray-200: #d2d2d2 !default; // custom
 $gray-300: #bdbdbd !default; // custom
@@ -397,6 +398,7 @@ $theme-colors: (
   'light': $bg-light,
   'dark': $bg-dark,
   'gray-0': $gray-0,
+  'gray-98': $gray-98,
   'gray-100': $gray-100,
   'gray-200': $gray-200,
   'gray-400': $gray-400,
@@ -668,10 +670,7 @@ $border-radius-2xl: $border-radius-xxl !default; // Deprecated in v5.3.0
 // fusv-enable
 
 // scss-docs-start box-shadow-variables
-// $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
-$box-shadow:
-  0 2px 5px 0 rgba($gray-700, 0.12),
-  0 8px 8px 0 rgba($gray-700, 0.04) !default;
+$box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
 $box-shadow-sm: 0 0.125rem 0.25rem rgba($black, 0.075) !default;
 $box-shadow-lg: 0 1rem 3rem rgba($black, 0.175) !default;
 $box-shadow-inset: inset 0 1px 2px rgba($black, 0.075) !default;
@@ -1678,12 +1677,9 @@ $toast-header-border-color: $toast-border-color !default;
 $badge-font-size: 0.875rem !default;
 $badge-font-weight: $font-weight-bold !default;
 $badge-color: $white !default;
-// $badge-padding-y: 0.35em !default;
-$badge-padding-y: 0.25rem !default;
-// $badge-padding-x: 0.65em !default;
-$badge-padding-x: 0.5rem !default;
-// $badge-border-radius: var(--#{$prefix}border-radius) !default;
-$badge-border-radius: 0.25rem !default;
+$badge-padding-y: 0.35em !default;
+$badge-padding-x: 0.65em !default;
+$badge-border-radius: var(--#{$prefix}border-radius) !default;
 // scss-docs-end badge-variables
 
 // Modals
