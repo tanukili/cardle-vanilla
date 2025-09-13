@@ -519,7 +519,7 @@
             <div>
               <!-- Swiper 主容器 -->
               <div class="plan-swiper h-100">
-                <div class="swiper-wrapper px-xxl-20">
+                <div class="swiper-wrapper">
                   <!-- 多個 Slides -->
                   <div class="swiper-slide h-auto">
                     <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
@@ -654,6 +654,7 @@
 
     <!-- 頁尾 -->
     <%- include('./layout/footer'); -%>
+
     <script type="module" src="../main.js"></script>
     <script type="module">
       // import Swiper JS
@@ -661,6 +662,7 @@
       // import Swiper styles
       import 'swiper/css/bundle';
 
+      // Cardle 能為你做到什麼 Swiper
       const functionSwiper = new Swiper('.function-swiper', {
         slidesPerView: 'auto',
         spaceBetween: 24,
@@ -672,6 +674,7 @@
         },
       });
 
+      // 用戶怎麼說 Swiper
       const commentSwiper = new Swiper('.comment-swiper', {
         loop: true,
         autoplay: true,
@@ -679,9 +682,16 @@
         spaceBetween: 24,
       });
 
+      // 選擇適合你的使用方案 Swiper
       const planSwiper = new Swiper('.plan-swiper', {
+        initialSlide: 1,
+        centeredSlides: true,
         slidesPerView: 'auto',
         spaceBetween: 24,
+        centerInsufficientSlides: true, // 不足時置中顯示（不需要捲動）
+        centeredSlidesBounds: true, // 夾住邊界，避免左右多餘空隙
+        resistanceRatio: 0, // 拖到邊界不會被「拉動」
+        watchOverflow: true, // 不足以滾動時自動停用滑動
 
         breakpoints: {
           992: {
