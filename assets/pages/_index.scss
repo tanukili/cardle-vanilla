@@ -1,9 +1,10 @@
 // hero 區塊
 .hero {
-  background: url(/assets/images/index/hero.png) no-repeat center right 38% / cover;
+  background: url(/assets/images/index/hero.png) no-repeat top right 41.5% / auto 132%;
 
-  @include media-breakpoint-up(sm) {
+  @include media-breakpoint-up(md) {
     background-position: center;
+    background-size: cover;
   }
 }
 
@@ -166,6 +167,9 @@
 }
 
 .comment-swiper {
+  .swiper-wrapper {
+    transition-timing-function: linear; // 線性速度，取消預設的 ease-in-out 抖動感
+  }
   .swiper-slide {
     width: 306px;
   }
