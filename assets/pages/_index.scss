@@ -167,6 +167,9 @@
 }
 
 .comment-swiper {
+  .swiper-wrapper {
+    transition-timing-function: linear; // 線性速度，取消預設的 ease-in-out 抖動感
+  }
   .swiper-slide {
     width: 306px;
   }
