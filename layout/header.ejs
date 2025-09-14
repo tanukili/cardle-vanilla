@@ -1,1 +1,61 @@
-
+<nav class="header-navbar navbar navbar-expand-md bg-gray-0 border-bottom border-primary-100">
+  <div class="container">
+    <a href="../pages/index.html">
+      <h2 class="logo">Cardle</h2>
+    </a>
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#headerNavbar"
+      aria-controls="headerNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas flex-row align-items-center justify-content-end">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item">
+          <a class="nav-link rounded-2 py-2 px-4 active" aria-current="page" href="/pages/index.html">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link rounded-2 py-2 px-4" href="../pages/features.html">商品介紹</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link rounded-2 py-2 px-4" href="../pages/subscription/detail.html">訂閱方案</a>
+        </li>
+        <li>
+          <a class="btn btn-outline-primary" href="../pages/login.html">登入</a>
+        </li>
+        <li>
+          <a class="btn btn-primary" href="../pages/sing-up.html">免費註冊</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div
+  class="header-offcanvas offcanvas offcanvas-end bg-gray-0"
+  tabindex="-1"
+  id="headerNavbar"
+  aria-labelledby="headerNavbarLabel"
+>
+  <div class="offcanvas-body p-2 border border-primary-400">
+    <ul class="navbar-nav me-auto mb-6">
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4 active" aria-current="page" href="/pages/index.html">首頁</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4" href="../pages/features.html">商品介紹</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4" href="../pages/subscription/detail.html">訂閱方案</a>
+      </li>
+    </ul>
+    <span class="border-bottom border-gray-200 mb-6 mx-2_5 d-block"></span>
+    <div class="d-flex flex-column">
+      <a class="btn btn-outline-primary text-left py-3 mb-2" href="../pages/login.html">登入</a>
+      <a class="btn btn-primary text-left py-3" href="../pages/sing-up.html">免費註冊</a>
+    </div>
+  </div>
+</div>
