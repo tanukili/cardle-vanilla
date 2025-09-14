@@ -1,0 +1,75 @@
+.macos-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .btn-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $gray-200;
+  }
+
+  /*  小螢幕 (小於 992px) */
+  @media (max-width: 992px) {
+    gap: 0.5rem; // 8px
+
+    .btn-dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.intro {
+  position: relative;
+  z-index: 10; // 確保在上一個 section 卡片之上
+  margin-top: -420px; // 桌機版往上蓋 400px
+
+  @media (max-width: 992px) {
+    margin-top: -40px; // 手機版往上蓋 40px
+  }
+}
+
+.mobile-pattern-1 {
+  position: absolute;
+  z-index: -1;
+  width: 294px;
+  height: 237px;
+  top: 535px;
+  left: -170px;
+}
+
+.pattern-1 {
+  position: absolute;
+  z-index: -1;
+  width: 1044px;
+  height: 843px;
+  top: 385px;
+  left: -400px;
+}
+
+.intro-detail {
+  position: relative; // 讓 pattern-2 以這個區塊為參考
+}
+
+.mobile-pattern-2 {
+  position: absolute;
+  z-index: 1;
+  width: 272px;
+  height: 216px;
+  bottom: 194px;
+  right: -150px;
+  overflow: hidden;
+}
+
+.pattern-2 {
+  position: absolute;
+  z-index: 1;
+  width: 1044px;
+  height: 843px;
+  bottom: 131px;
+  right: -300px;
+  overflow: hidden;
+}
