@@ -1,0 +1,30 @@
+.was-validated .was-validated .form-control:valid:focus,
+.form-control.is-valid:focus {
+  border-color: $secondary-400;
+}
+
+.was-validated {
+  .form-check-input:valid,
+  .form-check-input.is-valid,
+  .form-check-input:invalid,
+  .form-check-input.is-invalid {
+    & ~ .form-check-label {
+      color: $gray-900;
+    }
+  }
+
+  .form-check-input:invalid,
+  .form-check-input.is-invalid {
+    --bs-form-check-bg: #{$primary-100};
+  }
+
+  .form-control:valid:focus,
+  .form-control.is-valid:focus {
+    border-color: $secondary-400;
+  }
+  .form-check-input:valid,
+  .form-check-input.is-valid,
+  .form-check-input:checked {
+    border-color: $secondary-400;
+  }
+}

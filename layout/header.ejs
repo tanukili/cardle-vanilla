@@ -59,3 +59,17 @@
     </div>
   </div>
 </div>
+
+<script>
+  const header = document.querySelector('.header-navbar');
+
+  const toggleHeaderPotition = () => {
+    if (window.scrollY > 0) {
+      header.classList.add('position-fixed');
+    } else {
+      header.classList.remove('position-fixed');
+    }
+  };
+
+  window.addEventListener('scroll', toggleHeaderPotition);
+</script>
