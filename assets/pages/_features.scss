@@ -30,46 +30,56 @@
   @media (max-width: 992px) {
     margin-top: -40px; // 手機版往上蓋 40px
   }
-}
 
-.mobile-pattern-1 {
-  position: absolute;
-  z-index: -1;
-  width: 294px;
-  height: 237px;
-  top: 535px;
-  left: -170px;
-}
+  &::after {
+    content: '';
+    position: absolute;
+    background: url('/assets/images/features/pattern-1.svg') no-repeat center / contain;
 
-.pattern-1 {
-  position: absolute;
-  z-index: -1;
-  width: 1044px;
-  height: 843px;
-  top: 385px;
-  left: -400px;
+    left: clamp(-415px, -80px + -20.7vw, -176px);
+    top: clamp(380px, 380px + 12.4vw, 850px);
+
+    /* 大小：隨螢幕流動，不爆版 */
+    width: clamp(18.375rem, 6.9976rem + 48.5437vw, 65.25rem);
+
+    height: clamp(14.8125rem, 5.6195rem + 39.2233vw, 52.6875rem);
+
+    z-index: -1; // 保持背景層
+    opacity: 0.8; // 小螢幕看起來更輕
+  }
 }
 
 .intro-detail {
-  position: relative; // 讓 pattern-2 以這個區塊為參考
-}
+  position: relative;
+  z-index: 2;
+  overflow: hidden; // <-- 防止裝飾圖超出
 
-.mobile-pattern-2 {
-  position: absolute;
-  z-index: 1;
-  width: 272px;
-  height: 216px;
-  bottom: 194px;
-  right: -150px;
-  overflow: hidden;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('/assets/images/features/pattern-2.svg') no-repeat center / contain;
 
-.pattern-2 {
-  position: absolute;
-  z-index: 1;
-  width: 1044px;
-  height: 843px;
-  bottom: 131px;
-  right: -300px;
-  overflow: hidden;
+    /* 水平位置：大螢幕一半在 container 外 */
+    right: clamp(-54px, 46px - 26.76vw, -336px);
+
+    /* 垂直位置 */
+    top: clamp(60px, -3.38px + 16.9vw, 240px);
+
+    /* 大小隨螢幕縮放 */
+    width: clamp(17rem, 8.247rem + 37.3463vw, 53.0625rem);
+    height: clamp(13.5rem, 6.5674rem + 29.5793vw, 42.0625rem);
+
+    z-index: -1; // 在 section 背景上，但低於內容
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 375 / 76;
+    background: url('/assets/images/index/boundary-deco-bottom-mobile-1.svg') no-repeat center / contain;
+    z-index: 4;
+  }
 }
