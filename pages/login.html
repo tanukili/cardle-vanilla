@@ -48,7 +48,7 @@
               <label class="form-check-label" for="radioDefault1"> Default radio </label>
             </div>
             <button type="submit" class="btn btn-primary w-100 mt-4">登入</button>
-            <p>新會員？<a href="../pages/sing-up.html">註冊</a></p>
+            <p>新會員？<a href="<%= HERF_BASE %>sing-up.html">註冊</a></p>
           </form>
         </div>
       </div>
@@ -63,7 +63,7 @@
       loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
         localStorage.setItem('isLogin', 'true');
-        window.location.href = 'user/dashboard.html';
+        window.location.href = '<%= HERF_BASE %>user/dashboard.html';
       });
     </script>
   </body>
