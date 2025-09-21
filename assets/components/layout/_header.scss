@@ -23,11 +23,72 @@
       width: 1.5rem;
       height: 1.5rem;
     }
+    &[data-bs-target='#userNavbar'] {
+      --bs-focus-ring-color: #{$primary-100};
+    }
+  }
+  &:has(~ #headerNavbar.show) {
+    [data-bs-target='#headerNavbar'] {
+      background-color: $primary-100;
+    }
+  }
+  &:has(~ #userNavbar.show) {
+    [data-bs-target='#userNavbar'] {
+      box-shadow: 0 0 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+    }
+  }
+
+  .header-avatar {
+    width: 40px;
+    height: 40px;
+    @include media-breakpoint-up(md) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  .dropdown-toggle::after {
+    content: unset;
+  }
+  .dropdown .nav-link {
+    &:hover,
+    &:active,
+    &.show {
+      background-color: $primary-100;
+    }
+  }
+}
+
+// 登入後狀態
+.header-navbar,
+.header-offcanvas {
+  .login-show,
+  .user-show {
+    display: none;
+  }
+  &.login-state {
+    .login-none {
+      display: none !important;
+    }
+    .login-show {
+      display: block;
+    }
+  }
+  &.user-state {
+    .user-none {
+      display: none !important;
+    }
+    .user-show {
+      display: block;
+      .dropdown-menu.show {
+        display: flex;
+      }
+    }
   }
 }
 
 .header-offcanvas.offcanvas {
-  height: calc(100% - 72px);
+  height: calc(100% - 73px);
   top: unset;
   bottom: 0;
   width: 200px;
@@ -40,7 +101,7 @@
   --bs-navbar-active-color: #{$primary-600};
   .nav-link {
     &:hover {
-      background-color: $primary-300;
+      background-color: $primary-100;
     }
   }
   .btn-primary {
@@ -56,4 +117,10 @@
 // work around
 .text-left {
   text-align: left;
+}
+
+.dropdown-shadow {
+  box-shadow:
+    0px 8px 16px -2px rgba(27, 36, 44, 0.12),
+    0px 2px 2px -1px rgba(27, 35, 44, 0.04);
 }

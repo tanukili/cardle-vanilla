@@ -63,7 +63,7 @@ $secondary-800: #224679;
 $secondary-900: #172e51;
 $secondary-1000: #11233d;
 
-$color-start: #fac612;
+$color-star: #fac612;
 
 $bg-light: #fffcfc;
 $bg-dark: #373737;
@@ -422,7 +422,7 @@ $theme-colors: (
   'tag-orange-bg': $tag-orange-bg,
   'tag-gray': $tag-gray,
   'tag-gray-bg': $tag-gray-bg,
-  'start': $color-start,
+  'star': $color-star,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -1442,10 +1442,13 @@ $navbar-dark-brand-hover-color: $navbar-dark-active-color !default;
 // Dropdown menu container and contents.
 
 // scss-docs-start dropdown-variables
-$dropdown-min-width: 10rem !default;
-$dropdown-padding-x: 0 !default;
+$dropdown-min-width: 155px !default; // custom
+// $dropdown-min-width: 10rem !default;
+$dropdown-padding-x: 0.5rem !default; // custom
+// $dropdown-padding-x: 0 !default;
 $dropdown-padding-y: 0.5rem !default;
-$dropdown-spacer: 0.125rem !default;
+$dropdown-spacer: 0.5rem !default; //custom
+// $dropdown-spacer: 0.125rem !default;
 $dropdown-font-size: $font-size-base !default;
 $dropdown-color: var(--#{$prefix}body-color) !default;
 $dropdown-bg: var(--#{$prefix}body-bg) !default;
@@ -1459,16 +1462,21 @@ $dropdown-divider-bg: $dropdown-border-color !default;
 $dropdown-divider-margin-y: $spacer * 0.5 !default;
 $dropdown-box-shadow: var(--#{$prefix}box-shadow) !default;
 
+$dropdown-link-color: $primary-600 !default; // custom
 $dropdown-link-color: var(--#{$prefix}body-color) !default;
 $dropdown-link-hover-color: $dropdown-link-color !default;
-$dropdown-link-hover-bg: var(--#{$prefix}tertiary-bg) !default;
+$dropdown-link-hover-bg: $primary-100 !default; // custom
+// $dropdown-link-hover-bg: var(--#{$prefix}tertiary-bg) !default;
 
-$dropdown-link-active-color: $component-active-color !default;
-$dropdown-link-active-bg: $component-active-bg !default;
+$dropdown-link-active-color: $primary-0 !default; // custom
+// $dropdown-link-active-color: $component-active-color !default;
+$dropdown-link-active-bg: $primary-800 !default; // custom
+// $dropdown-link-active-bg: $component-active-bg !default;
 
 $dropdown-link-disabled-color: var(--#{$prefix}tertiary-color) !default;
 
-$dropdown-item-padding-y: $spacer * 0.25 !default;
+$dropdown-item-padding-y: $spacer * 0.75 !default; // custom
+// $dropdown-item-padding-y: $spacer * 0.25 !default;
 $dropdown-item-padding-x: $spacer !default;
 
 $dropdown-header-color: $gray-600 !default;
