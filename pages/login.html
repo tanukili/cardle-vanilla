@@ -14,19 +14,33 @@
         <div class="col-4 mx-auto">
           <h1>登入</h1>
           <p class="mb-4">歡迎回來，請輸入您的帳號及密碼。</p>
-          <form class="was-validated">
+          <form class="was-validated" id="login-form">
             <div class="mb-3">
               <label for="email" class="form-label">帳號</label>
-              <input type="email" class="form-control" id="email" placeholder="請輸入帳號" required />
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                placeholder="請輸入帳號"
+                value="fakemail@mail.com"
+                required
+              />
               <div class="invalid-feedback">請輸入註冊時使用的信箱</div>
             </div>
             <div class="mb-3">
               <label for="password" class="form-label">密碼</label>
-              <input type="password" placeholder="請輸入密碼" class="form-control" id="password" value="" required />
+              <input
+                type="password"
+                placeholder="請輸入密碼"
+                class="form-control"
+                id="password"
+                value="123456"
+                required
+              />
               <div class="invalid-feedback">請輸入密碼</div>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" checked required />
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
             <div class="form-check">
@@ -42,5 +56,15 @@
     <!-- 頁尾 -->
     <%- include('./layout/footer'); -%>
     <script type="module" src="../main.js"></script>
+
+    <script type="module">
+      const loginForm = document.querySelector('#login-form');
+
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        localStorage.setItem('isLogin', 'true');
+        window.location.href = 'user/dashboard.html';
+      });
+    </script>
   </body>
 </html>
