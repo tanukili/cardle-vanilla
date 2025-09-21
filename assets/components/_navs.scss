@@ -1,0 +1,32 @@
+.nav.nav-pills {
+  --bs-nav-link-color: #{$primary};
+  --bs-nav-link-hover-color: #{$primary};
+
+  // Selected 狀態
+  --bs-nav-pills-link-active-color: #{$primary-0};
+  --bs-nav-pills-link-active-bg: #{$primary-800};
+
+  .nav-link:not(.active):hover {
+    background-color: $primary-100;
+  }
+
+  &.outlined {
+    .nav-link {
+      border: 1px solid $primary-400;
+      &.active {
+        border: 1px solid $primary-800;
+      }
+    }
+  }
+
+  &.filled {
+    --bs-nav-link-color: #{$primary-0};
+
+    .nav-link {
+      background-color: $primary;
+      &.active {
+        background-color: var(--bs-nav-pills-link-active-bg);
+      }
+    }
+  }
+}
