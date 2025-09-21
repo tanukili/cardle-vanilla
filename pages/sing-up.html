@@ -9,7 +9,7 @@
     <!-- 導覽列 -->
     <%- include('./layout/header'); -%>
 
-    <main class="d-flex flex-column flex-md-row">
+    <main class="d-flex flex-column flex-md-row bg-light">
       <!-- 圖片區塊 -->
       <section class="sign-up-impression">
         <img src="/assets/images/impression.png" alt="impression" />
@@ -26,12 +26,26 @@
           <form class="row mb-6 was-validated">
             <div class="col-xl-6 mb-4">
               <label for="inputEmail" class="form-label">電子信箱<span class="ms-1 text-primary">*</span></label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="xxxxx@example.com" required />
-              <div class="invalid-feedback">請輸入有效的電子信箱。</div>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="inputEmail"
+                placeholder="xxxxx@example.com"
+                required
+              />
+              <div class="invalid-feedback">請輸入有效的電子信箱，未來將用於登入與通知。</div>
             </div>
             <div class="col-xl-6 mb-4">
               <label for="inputName" class="form-label">用戶名稱<span class="ms-1 text-primary">*</span></label>
-              <input type="text" class="form-control" id="inputName" placeholder="請輸入暱稱" required />
+              <input
+                type="text"
+                class="form-control"
+                name="username"
+                id="inputName"
+                placeholder="請輸入暱稱"
+                required
+              />
               <div class="invalid-feedback">請輸入您的名字或暱稱。</div>
             </div>
             <div class="col-xl-6 mb-4">
@@ -39,6 +53,7 @@
               <input
                 type="password"
                 class="form-control"
+                name="password1"
                 id="inputPassword"
                 minlength="6"
                 placeholder="請輸入至少6位數密碼"
@@ -51,6 +66,7 @@
               <input
                 type="password"
                 class="form-control"
+                name="password2"
                 id="inputPassword2"
                 minlength="6"
                 placeholder="再次確認密碼"
@@ -60,13 +76,13 @@
             </div>
             <div class="col-xl-6 mb-4">
               <label for="inputPhone" class="form-label">電話</label>
-              <input type="text" class="form-control" id="inputPhone" placeholder="請輸入電話號碼" />
+              <input type="text" class="form-control" name="phone" id="inputPhone" placeholder="請輸入電話號碼" />
             </div>
             <div class="col-xl-6 mb-4 align-self-end">
               <div class="d-flex">
                 <div class="align-self-end">
                   <label for="inputProfile" class="form-label btn btn-outline-primary me-4 mb-0">上傳頭貼</label>
-                  <input type="file" class="form-control d-none" id="inputProfile" />
+                  <input type="file" class="form-control d-none" name="profile" id="inputProfile" />
                 </div>
                 <div class="profile-preview">
                   <img src="/assets/images/user.png" alt="profile-preview" />
@@ -76,33 +92,28 @@
             </div>
             <div class="col-12 mb-4">
               <label for="inputAddress" class="form-label">帳單地址</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="請輸入帳單地址" />
+              <input type="text" class="form-control" name="address" id="inputAddress" placeholder="請輸入帳單地址" />
             </div>
-            <div class="col-12 mb-2">
+            <div class="col-12">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="checkNewsletter" checked />
+                <input class="form-check-input" type="checkbox" name="subscribe" id="checkNewsletter" checked />
                 <label class="form-check-label" for="checkNewsletter">訂閱電子報，收到更多產品資訊</label>
               </div>
             </div>
             <div class="col-12 mb-11 mb-md-15">
               <div class="form-check position-relative">
-                <input class="form-check-input" type="checkbox" id="checkTerms" required />
+                <input class="form-check-input" type="checkbox" name="agreeTerms" id="checkTerms" required />
                 <label class="form-check-label" for="checkTerms"
-                  >我已閱讀並同意
-                  <a
-                    href="#"
-                    class="text-decoration-underline link-secondary link-offset-1"
-                    data-bs-toggle="modal"
-                    data-bs-target="#termsModal"
-                    >服務條款 與 隱私權政策</a
+                  >我已閱讀並同意<a href="#" class="link-secondary" data-bs-toggle="modal" data-bs-target="#termsModal"
+                    >《服務條款與隱私政策》</a
                   ></label
                 >
-                <div class="invalid-feedback position-absolute start-0">請先同意 服務條款 與 隱私權政策。</div>
+                <div class="invalid-feedback position-absolute start-0">請先同意《服務條款隱私政策》。</div>
               </div>
             </div>
             <div class="col-12">
               <button
-                type="submit"
+                type="button"
                 class="btn btn-primary py-md-4 w-100"
                 data-bs-toggle="modal"
                 data-bs-target="#registerModal"
@@ -133,7 +144,7 @@
             <!-- <h1 class="modal-title fs-3xl" id="exampleModalLabel">Modal title</h1> -->
             <button type="button" class="btn-close p-2_5" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body ps-6 ps-md-10">
+          <div class="modal-body">
             <div class="mb-12">
               <h2 class="fs-2xl fs-md-3xl mb-6">會員服務條款</h2>
               <ul>
@@ -175,7 +186,8 @@
               <span class="material-symbols-outlined fill align-middle text-secondary fs-4xl me-2"> check_circle </span
               >註冊成功！
             </h1>
-            <button type="button" class="btn-close p-2_5" data-bs-dismiss="modal" aria-label="Close"></button>
+            <a href="../pages/login.html" class="btn-close p-2_5"></a>
+            <!-- <button type="button" class="btn-close p-2_5" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
           <div class="modal-body">
             <div>
@@ -184,7 +196,8 @@
             </div>
           </div>
           <div class="modal-footer border-top-0">
-            <button type="button" class="btn btn-primary py-md-4 w-100" data-bs-dismiss="modal">確認</button>
+            <a href="../pages/login.html" class="btn btn-primary py-md-4 w-100">確認</a>
+            <!-- <button type="button" class="btn btn-primary py-md-4 w-100" data-bs-dismiss="modal">確認</button> -->
           </div>
         </div>
       </div>
