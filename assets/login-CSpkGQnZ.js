@@ -1,0 +1,1 @@
+import"./main-DKZymDTv.js";const o=document.querySelector("#login-form");o.addEventListener("submit",e=>{e.preventDefault(),localStorage.setItem("isLogin","true"),window.location.href="/cardle-vanilla/user/dashboard.html"});

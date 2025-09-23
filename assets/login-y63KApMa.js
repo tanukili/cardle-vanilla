@@ -1,1 +1,0 @@
-import"./main-DuNgCe28.js";const o=document.querySelector("#login-form");o.addEventListener("submit",e=>{e.preventDefault(),localStorage.setItem("isLogin","true"),window.location.href="user/dashboard.html"});
