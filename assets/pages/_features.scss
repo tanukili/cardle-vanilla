@@ -137,4 +137,30 @@
       }
     }
   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 375 / 48;
+    background-color: $secondary-0;
+    background: url('/assets/images/features/boundary-deco-bot-mobile-2.svg') no-repeat center / contain;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::after {
+      bottom: -35px;
+      aspect-ratio: auto;
+      height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+      background: url('/assets/images/features/boundary-deco-bot-2.svg') no-repeat center / cover;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &::after {
+      bottom: -40px;
+    }
+  }
 }
