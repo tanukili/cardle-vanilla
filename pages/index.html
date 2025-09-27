@@ -3,138 +3,1006 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon" />
     <title>Cardle</title>
   </head>
   <body>
-    <div class="container">
-      <h1>標題</h1>
-      <br />
-      <div class="card mb-3 rounded-5 rounded-md-0">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
-      <div class="card mb-3 rounded-1">
-        <div class="card-body fs-m fs-md-4xl">This is some text within a card body.</div>
-      </div>
-      <div class="card mb-3 rounded-2">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
-      <div class="card mb-3 rounded-3">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
-      <div class="card mb-3 rounded-4">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
-      <div class="card rounded-5">
-        <div class="card-body">This is some text within a card body.</div>
-      </div>
-      <br /><br />
-      <span class="badge bg-tag-secondary-bg text-tag-secondary">tag-secondary</span>
-      <span class="badge bg-tag-success-bg text-tag-success">tag-success</span>
-      <span class="badge bg-tag-orange-bg text-tag-orange">tag-orange</span>
-      <span class="badge bg-tag-gray-bg text-tag-gray">tag-gray</span>
+    <!-- 導覽列 -->
+    <%- include('./layout/header'); -%>
 
-      <br /><br />
-      <button type="button" class="btn btn-primary">Primary</button>
-      <button type="button" class="btn btn-secondary">Secondary</button>
-      <button type="button" class="btn btn-success">Success</button>
-      <button type="button" class="btn btn-danger">Danger</button>
-      <button type="button" class="btn btn-warning">Warning</button>
-      <button type="button" class="btn btn-info">Info</button>
-      <button type="button" class="btn btn-light">Light</button>
-      <button type="button" class="btn btn-dark">Dark</button>
+    <!-- hero 區塊 -->
+    <section class="hero vh-100">
+      <div class="container h-100">
+        <div class="d-flex flex-column justify-content-center px-7_5 px-md-0 h-100">
+          <h1 class="fs-3xl fs-md-6xl mb-4 mb-md-8">卡片紀錄想法，讓知識自在成長</h1>
+          <p class="fw-bold fs-l fs-md-3xl mb-8">把靈感拆解、連結、重組，打造專屬你的知識地圖。</p>
+          <a href="<%= HERF_BASE %>sing-up.html" class="btn btn-primary align-self-md-start fs-md-xl py-md-4 px-md-6"
+            >立即開始</a
+          >
+        </div>
+      </div>
+    </section>
 
-      <button type="button" class="btn btn-link">Link</button>
-      <br /><br />
-      <button type="button" class="btn btn-outline-primary">Primary</button>
-      <button type="button" class="btn btn-outline-secondary">Secondary</button>
-      <button type="button" class="btn btn-outline-success">Success</button>
-      <button type="button" class="btn btn-outline-danger">Danger</button>
-      <button type="button" class="btn btn-outline-warning">Warning</button>
-      <button type="button" class="btn btn-outline-info">Info</button>
-      <button type="button" class="btn btn-outline-light">Light</button>
-      <button type="button" class="btn btn-outline-dark">Dark</button>
-      <br /><br />
-      <button type="button" class="btn btn-primary btn-lg">Large button</button>
-      <button type="button" class="btn btn-secondary btn-lg">Large button</button>
-      <br /><br />
-    </div>
+    <main class="position-relative overflow-x-hidden">
+      <!-- 什麼是「 卡片筆記 」？ -->
+      <section class="zettelkasten bg-light py-20 py-md-25">
+        <div class="container">
+          <div class="bg-gray-0 p-6 p-md-15 border border-gray-400 rounded-5 shadow">
+            <!-- 什麼是「 卡片筆記 」- 文字 -->
+            <h2 class="fs-2xl fs-md-5xl pb-6 border-bottom border-gray-400 mb-6">什麼是「卡片筆記」？</h2>
+            <p class="fw-bold fw-md-medium fs-md-2xl text-gray-600 mb-6 mb-md-10">
+              卡片筆記是一種將知識分解、重組、連結的筆記方式，啟發自 Zettelkasten ( 德語：卡片盒筆記法 )
+              與傳統段落式筆記不同，卡片筆記更接近人腦思考方式。
+            </p>
+            <!-- 什麼是「 卡片筆記 」- 卡片列表 -->
+            <ol class="d-flex flex-column flex-lg-row gap-6 list-unstyled mb-0">
+              <li class="card border-gray-200 rounded-4 overflow-hidden">
+                <img src="/assets/images/index/zettelkasten_01.png" class="card-img-top" alt="zettelkasten_01" />
+                <div class="card-body fs-md-xl p-md-6">
+                  <p class="fw-bold text-gray-700 d-flex">
+                    <span class="material-symbols-outlined align-bottom me-4 me-xl-6"> check </span
+                    >每張卡片紀錄一個單一概念
+                  </p>
+                </div>
+              </li>
+              <li class="card border-gray-200 rounded-4 overflow-hidden">
+                <img src="/assets/images/index/zettelkasten_02.png" class="card-img-top" alt="zettelkasten_02" />
+                <div class="card-body fs-md-xl p-md-6">
+                  <p class="fw-bold text-gray-700 d-flex">
+                    <span class="material-symbols-outlined align-bottom me-4 me-xl-6"> check </span>透過標籤、分類與連結
+                  </p>
+                </div>
+              </li>
+              <li class="card border-gray-200 rounded-4 overflow-hidden">
+                <img src="/assets/images/index/zettelkasten_03.png" class="card-img-top" alt="zettelkasten_03" />
+                <div class="card-body fs-md-xl p-md-6">
+                  <p class="fw-bold text-gray-700 d-flex">
+                    <span class="material-symbols-outlined align-bottom me-4 me-xl-6"> check </span
+                    >逐步建立出屬於你的知識地圖
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
 
-    <div id="app">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <!-- Cardle 能為你做到什麼？ -->
+      <section class="function bg-light py-20 py-md-25">
+        <div class="function-content">
+          <div class="container">
+            <!-- Cardle 能為你做到什麼 - 標題 -->
+            <div class="text-center mb-10 mb-md-16">
+              <h2 class="fs-2xl fs-md-5xl mb-4 mb-md-6">Cardle 能為你做到什麼？</h2>
+              <span class="badge bg-tag-secondary-bg text-tag-secondary fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"
+                ># 從閱讀到整理，陪你建立自己的知識系統</span
+              >
             </div>
-            <div class="modal-body">...</div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+            <!-- Cardle 能為你做到什麼 - 輪播列表 -->
+            <!-- Swiper 主容器 -->
+            <div class="function-swiper">
+              <div class="swiper-wrapper">
+                <!-- 多個 Slides -->
+                <div class="swiper-slide">
+                  <div class="d-md-flex justify-content-between gap-10 px-lg-10">
+                    <div
+                      class="border border-gray-400 rounded-4 shadow overflow-hidden mb-10 mb-md-0 w-md-580 function-img"
+                    >
+                      <img src="/assets/images/index/function_01.png" alt="function_01" />
+                    </div>
+                    <div class="d-flex flex-column justify-content-center max-w-516">
+                      <h3 class="lh-base lh-md-sm text-primary-900 fs-xl fs-lg-3xl mb-4 mb-md-8">閱讀追蹤</h3>
+                      <p class="text-primary-900 fs-lg-l">
+                        集中整理你正在閱讀的文章、書籍、課程或影片，針對每項資源標記章節、頁碼或時間軸進度。系統會自動提醒尚未完成的項目，讓學習進度一目了然、不再遺忘。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="d-md-flex justify-content-between gap-10 px-lg-10">
+                    <div
+                      class="border border-gray-400 rounded-4 shadow overflow-hidden mb-10 mb-md-0 w-md-580 function-img order-1"
+                    >
+                      <img src="/assets/images/index/function_02.png" alt="function_02" />
+                    </div>
+                    <div class="d-flex flex-column justify-content-center max-w-516 order-0">
+                      <h3 class="lh-base lh-md-sm text-primary-900 fs-xl fs-lg-3xl mb-4 mb-md-8">卡片筆記</h3>
+                      <p class="text-primary-900 fs-lg-l">
+                        每張卡片承載一個清晰概念，讓你以更貼近人腦的方式紀錄與組織知識。支援多標籤分類、補充筆記、進度狀態標示，打造屬於你的智慧筆記系統。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="d-md-flex justify-content-between gap-10 px-lg-10">
+                    <div
+                      class="border border-gray-400 rounded-4 shadow overflow-hidden mb-10 mb-md-0 w-md-580 function-img"
+                    >
+                      <img src="/assets/images/index/function_03.png" alt="function_03" />
+                    </div>
+                    <div class="d-flex flex-column justify-content-center max-w-516">
+                      <h3 class="lh-base lh-md-sm text-primary-900 fs-xl fs-lg-3xl mb-4 mb-md-8">卡片盒管理</h3>
+                      <p class="text-primary-900 fs-lg-l">
+                        將筆記卡片依主題、用途或專案分門別類，如「設計思維」、「AI筆記」、「商業模型」。就像為你的知識建立資料夾與抽屜，快速取用，輕鬆擴展。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="d-md-flex justify-content-between gap-10 px-lg-10">
+                    <div
+                      class="border border-gray-400 rounded-4 shadow overflow-hidden mb-10 mb-md-0 w-md-580 function-img order-1"
+                    >
+                      <img src="/assets/images/index/function_04.png" alt="function_04" />
+                    </div>
+                    <div class="d-flex flex-column justify-content-center max-w-516 order-0">
+                      <h3 class="lh-base lh-md-sm text-primary-900 fs-xl fs-lg-3xl mb-4 mb-md-8">白板地圖</h3>
+                      <p class="text-primary-900 fs-lg-l">
+                        在自由畫布中拖曳卡片、建立連結，視覺化展開你的思考網絡。從主題出發，串聯子概念與靈感，打造有層次、有脈絡的知識地圖。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <!-- Swiper -->
-      <div class="swiper pt-4">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide bg-secondary" style="height: 200px">Slide 1</div>
-          <div class="swiper-slide bg-warning" style="height: 200px">Slide 2</div>
-          <div class="swiper-slide bg-success" style="height: 200px">Slide 3</div>
+      <!-- 為什麼選擇 Cardle？ -->
+      <section class="reason bg-light py-20 py-md-25">
+        <div class="container">
+          <!-- 為什麼選擇 Cardle - 標題 -->
+          <div class="reason-content text-center mb-10 mb-md-20">
+            <h2 class="fs-2xl fs-md-5xl mb-4 mb-md-6">為什麼選擇 Cardle？</h2>
+            <span class="badge bg-tag-orange-bg text-tag-orange fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"
+              ># 從線性紀錄到網狀思考的轉變</span
+            >
+          </div>
+          <!-- 為什麼選擇 Cardle - 卡片 -->
+          <div class="d-flex flex-column flex-md-row gap-10 gap-lg-20">
+            <!-- 傳統筆記工具 -->
+            <div>
+              <div class="mb-4 mb-md-8">
+                <img src="/assets/images/index/why_01.png" alt="why_01" />
+              </div>
+              <div>
+                <h3 class="text-center text-primary-900 fs-xl fs-md-3xl mb-4">傳統筆記工具</h3>
+                <p class="text-center text-primary-800 fs-md-xl">難整理、難連結</p>
+              </div>
+            </div>
+            <!-- Cardle -->
+            <div>
+              <div class="mb-4 mb-md-8">
+                <img src="/assets/images/index/why_02.png" alt="why_02" />
+              </div>
+              <div>
+                <h3 class="text-center text-primary-900 fs-xl fs-md-3xl mb-4">Cardle</h3>
+                <p class="text-center text-primary-800 fs-md-xl">自由連結與視覺化的知識地圖</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- Chart -->
-    <canvas id="myChart"></canvas>
+      <!-- 用戶怎麼說 -->
+      <section class="comment">
+        <div class="bg-gray-200 py-8 py-md-25">
+          <div class="container">
+            <!-- 用戶怎麼說 - 標題 -->
+            <div class="text-center mb-10 mb-md-20">
+              <h2 class="fs-2xl fs-md-5xl mb-4 mb-md-6">用戶怎麼說</h2>
+              <span class="badge bg-tag-success-bg text-tag-success fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"
+                ># 來自用戶的真實回饋</span
+              >
+            </div>
+            <!-- 用戶怎麼說 - 評論卡片輪播 -->
+            <!-- Swiper 主容器 -->
+            <div class="comment-swiper">
+              <div class="swiper-wrapper">
+                <!-- 多個 Slides -->
+                <div class="swiper-slide">
+                  <!-- user_01 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_01.jpg" alt="user_01" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Yuki</p>
+                          <p class="text-gray-500 fs-s">創業者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">只有 Cardle 最貼近我真正的思考方式</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        從 Notion 到 Obsidian，我試過各種筆記工具，但大多仍是「頁面內的線性紀錄」。Cardle
+                        讓我把想法像卡片一樣自由擺放、拖曳、串連，腦中的路徑就能在畫面上被看見。當我需要專注時，它是乾淨的白板；當我需要連結時，它是可以任意拉線的地圖。這不只是記錄，而是我每天工作流程的延伸，回顧時只要一眼就能找到關鍵。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_02 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_02.png" alt="user_02" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Nanda</p>
+                          <p class="text-gray-500 fs-s">學術研究者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">我終於不再迷失在上百頁的PDF和雜亂筆記裡。</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        以前我的筆記都放在Notion或Word裡，寫是寫了，但每次找資料都像在考古。自從用了Cardle，我把每個論點和資料整理成卡片，再用白板把它們連起來，不但清楚看到哪些觀點互相關聯，還意外發現新的研究方向。<br />我特別喜歡卡片盒功能，能按照主題整理不同段落的想法，像是幫我建立一套「知識資料庫」。現在整理論文進度變得超直覺，寫作效率也提升了很多！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_03 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_04.png" alt="user_04" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Ken</p>
+                          <p class="text-gray-500 fs-s">設計師</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">我從來沒想過，整理知識可以這麼直覺！</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        用Cardle建立卡片、拖曳與連結，就像把腦中的線索攤開成一張思緒地圖。以前總覺得做筆記是一件沉重的事，現在卻變得像在玩拼圖，那些零碎的靈感也在不知不覺中被串聯起來。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_04 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_03.png" alt="user_03" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Makzan</p>
+                          <p class="text-gray-500 fs-s">專案工作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">從會議紀錄到企劃草稿，一切變得更有邏輯。</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        Cardle完美取代了我過去雜亂的文件夾和筆記工具。每次會議後，我用卡片記下重點，接著把相關卡片拖進同一個卡片盒（像是『市場研究』、『用戶需求』），更進一步，我會在白板上連接卡片，規劃專案流程。這種自由但有結構的筆記方式，讓我能更快速統整資訊，也讓跨部門溝通變得更有效率。對我來說，Cardle
+                        不只是筆記工具，它是我的第二個大腦。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_05 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_07.png" alt="user_07" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Alan</p>
+                          <p class="text-gray-500 fs-s">講師</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">卡片盒設計太棒了！</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        我把不同主題的筆記像資料夾一樣分門別類，找資料再也不手忙腳亂。每次整理完卡片盒，都有種井然有序的成就感。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_06 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_05.png" alt="user_05" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Mei</p>
+                          <p class="text-gray-500 fs-s">產品經理</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">Cardle 讓我第一次『看見』思考的脈絡</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        傳統筆記常常寫了就忘，翻閱時只能一頁頁翻。Cardle不一樣，它讓我在畫面上看到想法之間的連結，我可以明確感受到自己是怎麼從
+                        A 想到 B，再推進到 C。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_07 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_06.png" alt="user_06" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Diane</p>
+                          <p class="text-gray-500 fs-s">自由寫作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">『 閱讀追蹤 』功能超實用</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        過去常常學到一半就忘了進度，現在只要打開 Cardle
+                        就知道上次停在哪。它會提醒我下一步該繼續哪章，學習效率整個提升！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_08 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_08.png" alt="user_08" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Max</p>
+                          <p class="text-gray-500 fs-s">創作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">
+                        創作靈感不再散落，卡片幫我捕捉每一道想法。
+                      </h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        寫作靈感來來去去，過去我常打開一堆備忘錄、Google
+                        Docs，最後反而找不到當初的那個點子。現在我把每個靈感都寫成卡片，分類到不同的主題卡片盒（像是「小說角色」、「情節靈感」、「文章開頭」），然後在白板上做結構規劃。<br />寫文章就像拼拼圖一樣，卡片之間可以移動、重組，這真的非常符合我腦中思考的方式。Cardle讓我更安心地把創作留在一個地方，也更容易「看到」我正在構築什麼。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_09 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_09.png" alt="user_09" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Lili</p>
+                          <p class="text-gray-500 fs-s">研究所學生</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">卡片筆記讓資訊變得更輕盈</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        一段段長篇文字太難瀏覽，Cardle的卡片設計解放了我。每個重點都能獨立存在，又能被標籤分類、自由組合。整理起來更有效率，思緒也更清楚！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <!-- 重複 -->
+                <div class="swiper-slide">
+                  <!-- user_01 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_01.jpg" alt="user_01" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Yuki</p>
+                          <p class="text-gray-500 fs-s">創業者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">只有 Cardle 最貼近我真正的思考方式</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        從 Notion 到 Obsidian，我試過各種筆記工具，但大多仍是「頁面內的線性紀錄」。Cardle
+                        讓我把想法像卡片一樣自由擺放、拖曳、串連，腦中的路徑就能在畫面上被看見。當我需要專注時，它是乾淨的白板；當我需要連結時，它是可以任意拉線的地圖。這不只是記錄，而是我每天工作流程的延伸，回顧時只要一眼就能找到關鍵。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_02 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_02.png" alt="user_02" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Nanda</p>
+                          <p class="text-gray-500 fs-s">學術研究者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">我終於不再迷失在上百頁的PDF和雜亂筆記裡。</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        以前我的筆記都放在Notion或Word裡，寫是寫了，但每次找資料都像在考古。自從用了Cardle，我把每個論點和資料整理成卡片，再用白板把它們連起來，不但清楚看到哪些觀點互相關聯，還意外發現新的研究方向。<br />我特別喜歡卡片盒功能，能按照主題整理不同段落的想法，像是幫我建立一套「知識資料庫」。現在整理論文進度變得超直覺，寫作效率也提升了很多！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_03 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_04.png" alt="user_04" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Ken</p>
+                          <p class="text-gray-500 fs-s">設計師</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">我從來沒想過，整理知識可以這麼直覺！</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        用Cardle建立卡片、拖曳與連結，就像把腦中的線索攤開成一張思緒地圖。以前總覺得做筆記是一件沉重的事，現在卻變得像在玩拼圖，那些零碎的靈感也在不知不覺中被串聯起來。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_04 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_03.png" alt="user_03" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Makzan</p>
+                          <p class="text-gray-500 fs-s">專案工作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">從會議紀錄到企劃草稿，一切變得更有邏輯。</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        Cardle完美取代了我過去雜亂的文件夾和筆記工具。每次會議後，我用卡片記下重點，接著把相關卡片拖進同一個卡片盒（像是『市場研究』、『用戶需求』），更進一步，我會在白板上連接卡片，規劃專案流程。這種自由但有結構的筆記方式，讓我能更快速統整資訊，也讓跨部門溝通變得更有效率。對我來說，Cardle
+                        不只是筆記工具，它是我的第二個大腦。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_05 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_07.png" alt="user_07" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Alan</p>
+                          <p class="text-gray-500 fs-s">講師</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">卡片盒設計太棒了！</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        我把不同主題的筆記像資料夾一樣分門別類，找資料再也不手忙腳亂。每次整理完卡片盒，都有種井然有序的成就感。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_06 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_05.png" alt="user_05" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Mei</p>
+                          <p class="text-gray-500 fs-s">產品經理</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">Cardle 讓我第一次『看見』思考的脈絡</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        傳統筆記常常寫了就忘，翻閱時只能一頁頁翻。Cardle不一樣，它讓我在畫面上看到想法之間的連結，我可以明確感受到自己是怎麼從
+                        A 想到 B，再推進到 C。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_07 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_06.png" alt="user_06" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Diane</p>
+                          <p class="text-gray-500 fs-s">自由寫作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">『 閱讀追蹤 』功能超實用</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        過去常常學到一半就忘了進度，現在只要打開 Cardle
+                        就知道上次停在哪。它會提醒我下一步該繼續哪章，學習效率整個提升！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <!-- user_08 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow mb-6">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_08.png" alt="user_08" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Max</p>
+                          <p class="text-gray-500 fs-s">創作者</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">
+                        創作靈感不再散落，卡片幫我捕捉每一道想法。
+                      </h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        寫作靈感來來去去，過去我常打開一堆備忘錄、Google
+                        Docs，最後反而找不到當初的那個點子。現在我把每個靈感都寫成卡片，分類到不同的主題卡片盒（像是「小說角色」、「情節靈感」、「文章開頭」），然後在白板上做結構規劃。<br />寫文章就像拼拼圖一樣，卡片之間可以移動、重組，這真的非常符合我腦中思考的方式。Cardle讓我更安心地把創作留在一個地方，也更容易「看到」我正在構築什麼。
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                  <!-- user_09 -->
+                  <div class="bg-gray-0 p-4 border border-primary-100 rounded-4 shadow">
+                    <!-- 頭像, user 及星星 -->
+                    <div class="d-flex justify-content-between mb-4">
+                      <div class="d-flex gap-4">
+                        <div class="avatar-48">
+                          <img src="/assets/images/index/user_09.png" alt="user_09" />
+                        </div>
+                        <div>
+                          <p class="fw-bold mb-1">Lili</p>
+                          <p class="text-gray-500 fs-s">研究所學生</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span
+                        ><span class="material-symbols-outlined fill text-star"> star </span>
+                      </div>
+                    </div>
+                    <!-- 評論內容 -->
+                    <div class="mb-4">
+                      <h3 class="text-gray-700 lh-base fs-m fs-md-l mb-2">卡片筆記讓資訊變得更輕盈</h3>
+                      <p class="text-gray-600 fs-s fs-md-m">
+                        一段段長篇文字太難瀏覽，Cardle的卡片設計解放了我。每個重點都能獨立存在，又能被標籤分類、自由組合。整理起來更有效率，思緒也更清楚！
+                      </p>
+                    </div>
+                    <!-- 評論時間 -->
+                    <time datetime="2021-11-23" class="font-Manrope text-gray-500 fs-xs lh-1">23 Nov 2021</time>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 選擇適合你的使用方案 -->
+      <section class="plan">
+        <div class="bg-gray-600 py-20 py-md-25">
+          <div class="container">
+            <!-- 選擇適合你的使用方案 - 標題與標籤 -->
+            <div class="mb-10 mb-md-20">
+              <h2 class="text-center text-gray-0 fs-2xl fs-md-5xl pb-6 border-bottom border-gray-0 mb-6">
+                選擇適合你的使用方案
+              </h2>
+              <div class="d-flex justify-content-center gap-2 gap-md-6">
+                <span class="badge bg-gray-0 text-gray-600 fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"># 簡單起步</span
+                ><span class="badge bg-gray-0 text-gray-600 fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"># 彈性升級</span
+                ><span class="badge bg-gray-0 text-gray-600 fs-md-2xl lh-base lh-md-sm py-md-2 px-md-4"
+                  ># 讓筆記陪你成長</span
+                >
+              </div>
+            </div>
+            <!-- 選擇適合你的使用方案 - 方案卡片輪播 -->
+            <div>
+              <!-- Swiper 主容器 -->
+              <div class="plan-swiper h-100">
+                <div class="swiper-wrapper">
+                  <!-- 多個 Slides -->
+                  <div class="swiper-slide h-auto">
+                    <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                      <div>
+                        <!-- 方案名稱 -->
+                        <div class="pb-6 border-bottom border-gray-400 mb-8">
+                          <div class="d-flex justify-content-between mb-6">
+                            <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l"
+                              >Free</span
+                            ><span class="fs-s fs-md-l fw-bold text-gray-500">免費方案</span>
+                          </div>
+                          <h3>
+                            <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 0</span
+                            ><span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                          </h3>
+                        </div>
+                        <!-- 方案內容 -->
+                        <ul class="list-unstyled mb-8">
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-gray-500 me-4"> check </span
+                            ><span class="text-gray-1000">建立筆記卡片</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-gray-500 me-4"> check </span
+                            ><span class="text-gray-1000">建立書單</span>
+                          </li>
+                          <li>
+                            <span class="material-symbols-outlined align-bottom text-gray-500 me-4"> check </span
+                            ><span class="text-gray-1000">標籤分類</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- CTA 按鈕 -->
+                      <a href="<%= HERF_BASE %>sing-up.html" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100"
+                        >立即註冊</a
+                      >
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-auto">
+                    <div
+                      class="bg-gray-0 p-6 border border-2 border-secondary rounded-4 shadow d-flex flex-column h-100"
+                    >
+                      <div>
+                        <!-- 方案名稱 -->
+                        <div class="pb-6 border-bottom border-gray-400 mb-8">
+                          <div class="d-flex justify-content-between mb-6">
+                            <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l"
+                              >Pro</span
+                            ><span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                          </div>
+                          <h3>
+                            <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span
+                            ><span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                          </h3>
+                        </div>
+                        <!-- 方案內容 -->
+                        <ul class="list-unstyled mb-8">
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">無限制建立書單</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">標籤分類</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">視覺化關聯地圖</span>
+                          </li>
+                          <li>
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">進度追蹤與提醒</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- CTA 按鈕 -->
+                      <a href="#" class="btn btn-secondary py-md-4 mt-auto w-100">升級方案（推薦）</a>
+                    </div>
+                  </div>
+                  <div class="swiper-slide h-auto">
+                    <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                      <div>
+                        <!-- 方案名稱 -->
+                        <div class="pb-6 border-bottom border-gray-400 mb-8">
+                          <div class="d-flex justify-content-between mb-6">
+                            <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l"
+                              >Pro</span
+                            ><span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                          </div>
+                          <h3>
+                            <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span
+                            ><span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                          </h3>
+                        </div>
+                        <!-- 方案內容 -->
+                        <ul class="list-unstyled mb-8">
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">無限制建立書單</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">標籤分類</span>
+                          </li>
+                          <li class="mb-3">
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">視覺化關聯地圖</span>
+                          </li>
+                          <li>
+                            <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                            ><span class="text-gray-1000">進度追蹤與提醒</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- CTA 按鈕 -->
+                      <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100">升級方案</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <%- include('./layout/footer'); -%>
 
     <script type="module" src="../main.js"></script>
     <script type="module">
-      // import Swiper JS
+      // Core
       import Swiper from 'swiper';
+      import 'swiper/css';
       import { Autoplay } from 'swiper/modules';
 
-      // import Swiper styles
-      import 'swiper/css';
+      // Cardle 能為你做到什麼 Swiper
+      const functionSwiper = new Swiper('.function-swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
 
-      const swiper = new Swiper('.swiper', {
-        modules: [Autoplay],
-        loop: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
+        breakpoints: {
+          768: {
+            direction: 'vertical',
+          },
         },
       });
 
-      import Chart from 'chart.js/auto';
-      const ctx = document.getElementById('myChart');
-
-      const test = () => {};
-
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-          datasets: [
-            {
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              borderWidth: 1,
-            },
-          ],
+      // 用戶怎麼說 Swiper
+      const commentSwiper = new Swiper('.comment-swiper', {
+        modules: [Autoplay],
+        loop: true,
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        speed: 10000, // 每次「跨到下一張」的時間
+        autoplay: {
+          delay: 0, // 0 = 連續播放
+          disableOnInteraction: false, // 用戶有互動後，自動播放是否要停止
         },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-            },
+        allowTouchMove: false, // 不讓手動拖動打斷
+        loopAdditionalSlides: 2, // 額外複製到左右兩側的 slide 數量，捲到邊界不會出現空隙或閃動
+      });
+
+      // 選擇適合你的使用方案 Swiper
+      const planSwiper = new Swiper('.plan-swiper', {
+        initialSlide: 1,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        centerInsufficientSlides: true, // 不足時置中顯示（不需要捲動）
+        centeredSlidesBounds: true, // 夾住邊界，避免左右多餘空隙
+        resistanceRatio: 0, // 拖到邊界不會被「拉動」
+        watchOverflow: true, // 不足以滾動時自動停用滑動
+
+        breakpoints: {
+          992: {
+            spaceBetween: 40,
           },
         },
       });
