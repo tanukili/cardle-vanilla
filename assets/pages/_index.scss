@@ -1,0 +1,202 @@
+// hero 區塊
+.hero {
+  background: url(/assets/images/index/hero.png) no-repeat top right 41.5% / auto 132%;
+
+  @include media-breakpoint-up(md) {
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+// 什麼是「 卡片筆記 」
+.zettelkasten {
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: '';
+    position: absolute;
+    background: url('/assets/images/index/orange-deco-pc.svg') no-repeat center / contain;
+    right: 0;
+    bottom: 0;
+    transform: translate(
+      clamp(1.8125rem, 1.6456rem + 0.712vw, 2.5rem),
+      clamp(4.25rem, 0.1086rem + 17.6699vw, 21.3125rem)
+    );
+    width: clamp(15.25rem, 5.2985rem + 42.4595vw, 56.25rem);
+    height: clamp(14.3125rem, 4.9678rem + 39.8706vw, 52.8125rem);
+    z-index: -1;
+  }
+}
+
+// Cardle 能為你做到什麼
+.function {
+  position: relative;
+
+  .function-content {
+    position: relative;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('/assets/images/index/secondary-deco-pc.svg') no-repeat center / contain;
+      left: clamp(-3.75rem, -3.568rem + -0.7767vw, -4.5rem);
+      bottom: clamp(-9.75rem, -17.0922rem + 31.3269vw, 20.5rem);
+      width: clamp(12.5rem, 1.8811rem + 45.3074vw, 56.25rem);
+      height: clamp(8.5rem, 1.1729rem + 31.2621vw, 38.6875rem);
+      z-index: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background: url('/assets/images/index/success-deco-pc.svg') no-repeat center / contain;
+      right: 0;
+      bottom: 0;
+      transform: translate(92px, 233px);
+      width: clamp(15.25rem, 5.2985rem + 42.4595vw, 56.25rem);
+      height: clamp(9.488875rem, 3.2969rem + 26.4193vw, 35rem);
+      z-index: 0;
+      display: none;
+    }
+    @include media-breakpoint-up(md) {
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.function-swiper {
+  .swiper-wrapper {
+    display: flex;
+  }
+  .swiper-slide {
+    width: 260px;
+  }
+  .function-img {
+    aspect-ratio: 580 / 386;
+    min-width: 260px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .swiper-wrapper {
+      flex-direction: column;
+      gap: 64px;
+    }
+    .swiper-slide {
+      width: auto;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .w-md-580 {
+    width: 580px;
+  }
+}
+.max-w-516 {
+  max-width: 516px;
+}
+
+// 為什麼選擇 Cardle？
+.reason {
+  position: relative;
+  .reason-content {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+// 用戶怎麼說
+.comment {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -34px;
+    left: 0;
+    width: clamp(23.4375rem, 0rem + 100vw, 120rem);
+    aspect-ratio: 375 / 55.16;
+    background: url('/assets/images/index/boundary-deco-top-mobile.svg') no-repeat center / cover;
+    z-index: 4;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 375 / 76;
+    background: url('/assets/images/index/boundary-deco-bottom-mobile.svg') no-repeat center / contain;
+    z-index: 4;
+  }
+
+  .comment-swiper {
+    position: relative;
+    z-index: 5;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::before {
+      top: -43.2px;
+      aspect-ratio: auto;
+      height: clamp(3.4475rem, 2.1605rem + 5.4913vw, 8.75rem);
+      background: url('/assets/images/index/boundary-deco-top-pc.svg') no-repeat center / cover;
+    }
+    &::after {
+      aspect-ratio: auto;
+      height: clamp(4.75rem, 3.3847rem + 5.8252vw, 10.375rem);
+      background: url('/assets/images/index/boundary-deco-bottom-pc.svg') no-repeat center / cover;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &::before {
+      top: -56px;
+    }
+    &::after {
+      bottom: -43px;
+    }
+  }
+}
+
+.comment-swiper {
+  .swiper-wrapper {
+    transition-timing-function: linear; // 線性速度，取消預設的 ease-in-out 抖動感
+  }
+  .swiper-slide {
+    width: 306px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .swiper-slide {
+      width: 416px;
+    }
+  }
+}
+
+.avatar-48 {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+// 選擇適合你的使用方案
+.plan-swiper {
+  .swiper-slide {
+    width: 280px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .swiper-slide {
+      width: 352px;
+    }
+  }
+}

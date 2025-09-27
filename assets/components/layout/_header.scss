@@ -1,0 +1,59 @@
+.logo {
+  display: block;
+  width: 159.13px;
+  height: 40px;
+  background: url('/assets/images/logo-with-text.svg') center / cover no-repeat;
+  text-indent: 101%;
+  word-wrap: nowrap;
+  overflow: hidden;
+}
+
+.header-navbar {
+  width: 100%;
+  z-index: 1041;
+
+  .navbar-toggler {
+    &:hover,
+    &:focus-visible,
+    &:focus,
+    &:active {
+      background-color: $primary-100;
+    }
+    &-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+}
+
+.header-offcanvas.offcanvas {
+  height: calc(100% - 72px);
+  top: unset;
+  bottom: 0;
+  width: 200px;
+}
+
+.offcanvas {
+  --bs-navbar-color: #{$primary-700};
+  --bs-navbar-hover-color: #{$primary-600};
+  --bs-navbar-disabled-color: #{$gray-200};
+  --bs-navbar-active-color: #{$primary-600};
+  .nav-link {
+    &:hover {
+      background-color: $primary-300;
+    }
+  }
+  .btn-primary {
+    --bs-btn-hover-color: #{$primary-600};
+  }
+  .btn-outline-primary {
+    --bs-btn-hover-color: #{$primary-600};
+    --bs-btn-hover-bg: #{$primary-300};
+    --bs-btn-active-border-color: #{$primary-800};
+  }
+}
+
+// work around
+.text-left {
+  text-align: left;
+}
