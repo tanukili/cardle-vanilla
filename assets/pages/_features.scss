@@ -41,14 +41,14 @@
     background: url('/assets/images/features/pattern-1.svg') no-repeat center / contain;
 
     left: clamp(-430px, -80px + -20.7vw, -176px);
-    top: clamp(350px, 250px + 12.4vw, 750px);
+    top: clamp(350px, 50px + 2.4vw, 550px);
 
     /* 大小：隨螢幕流動，不爆版 */
     width: clamp(18.375rem, 6.9976rem + 48.5437vw, 65.25rem);
 
     height: clamp(14.8125rem, 5.6195rem + 39.2233vw, 52.6875rem);
 
-    z-index: -1; // 保持背景層
+    z-index: -3; // 保持背景層
     opacity: 0.8; // 小螢幕看起來更輕
   }
 }
@@ -58,7 +58,10 @@
   z-index: 2;
   overflow-x: clip; // 跟 hidden 一樣裁掉，但不算 overflow，不會出 scrollbar
   overflow-y: visible; // 允許上下外露
-
+  .intro-image {
+    position: relative;
+    z-index: 10;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -73,7 +76,7 @@
     /* 大小隨螢幕縮放 */
     width: clamp(17rem, 8.247rem + 37.3463vw, 53.0625rem);
     height: clamp(13.5rem, 6.5674rem + 29.5793vw, 42.0625rem);
-    z-index: -1; // 在 section 背景上，但低於內容
+    z-index: -2; // 在 section 背景上，但低於內容
   }
 
   &::after {
@@ -84,7 +87,7 @@
     right: 0;
     aspect-ratio: 375 / 44;
     background: url('/assets/images/features/boundary-deco-bot-mobile-1.svg') no-repeat center / contain;
-    z-index: 2;
+    z-index: -10;
   }
 
   @include media-breakpoint-up(sm) {
