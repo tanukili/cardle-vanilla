@@ -1,0 +1,12 @@
+.login-banner {
+  height: 200px;
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  @include media-breakpoint-up(md) {
+    height: auto;
+    flex-grow: 1;
+  }
+}
