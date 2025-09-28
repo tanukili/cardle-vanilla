@@ -1,0 +1,169 @@
+.macos-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  .btn-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: $gray-200;
+  }
+
+  /*  小螢幕 (小於 992px) */
+  @media (max-width: 992px) {
+    gap: 0.5rem; // 8px
+
+    .btn-dot {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.intro {
+  position: relative;
+  z-index: 10; // 確保在上一個 section 卡片之上
+  margin-top: -120px; // 手機版往上蓋 120px
+  @include media-breakpoint-up(sm) {
+    margin-top: -160px;
+  }
+  @include media-breakpoint-up(lg) {
+    margin-top: -280px;
+  }
+  @include media-breakpoint-up(xxl) {
+    margin-top: -420px; // 桌機版往上蓋 420px
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    background: url('/assets/images/features/pattern-1.svg') no-repeat center / contain;
+
+    left: clamp(-430px, -80px + -20.7vw, -176px);
+    top: clamp(350px, 50px + 2.4vw, 550px);
+
+    /* 大小：隨螢幕流動，不爆版 */
+    width: clamp(18.375rem, 6.9976rem + 48.5437vw, 65.25rem);
+
+    height: clamp(14.8125rem, 5.6195rem + 39.2233vw, 52.6875rem);
+
+    z-index: -3; // 保持背景層
+    opacity: 0.8; // 小螢幕看起來更輕
+  }
+}
+
+.intro-detail {
+  position: relative;
+  z-index: 2;
+  overflow-x: clip; // 跟 hidden 一樣裁掉，但不算 overflow，不會出 scrollbar
+  overflow-y: visible; // 允許上下外露
+  .intro-image {
+    position: relative;
+    z-index: 10;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('/assets/images/features/pattern-2.svg') no-repeat center / contain;
+
+    /* 水平位置：大螢幕一半在 container 外 */
+    right: clamp(-280px, 46px - 26.76vw, -100px);
+
+    /* 垂直位置 */
+    top: clamp(360px, 3.38px + 16.9vw, 860px);
+
+    /* 大小隨螢幕縮放 */
+    width: clamp(17rem, 8.247rem + 37.3463vw, 53.0625rem);
+    height: clamp(13.5rem, 6.5674rem + 29.5793vw, 42.0625rem);
+    z-index: -2; // 在 section 背景上，但低於內容
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 375 / 44;
+    background: url('/assets/images/features/boundary-deco-bot-mobile-1.svg') no-repeat center / contain;
+    z-index: -10;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::after {
+      bottom: -35px;
+      aspect-ratio: auto;
+      height: clamp(2.75rem, 1.2937rem + 6.2136vw, 8.75rem);
+      background: url('/assets/images/features/boundary-deco-bot-1.svg') no-repeat center / cover;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &::after {
+      bottom: -52px;
+    }
+  }
+  @include media-breakpoint-up(xxl) {
+    &::after {
+      bottom: -68px;
+    }
+  }
+}
+
+.users {
+  position: relative;
+
+  .users-swiper {
+    max-width: 100%;
+
+    .swiper-slide {
+      width: 200px;
+    }
+    .users-img {
+      aspect-ratio: 306/300;
+      min-width: 200px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      .swiper-slide {
+        width: 306px;
+      }
+
+      .h-md-300 {
+        height: 300px;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    aspect-ratio: 375 / 48;
+    background-color: $secondary-0;
+    background: url('/assets/images/features/boundary-deco-bot-mobile-2.svg') no-repeat center / contain;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(sm) {
+    &::after {
+      bottom: -32px;
+      aspect-ratio: auto;
+      height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+      background: url('/assets/images/features/boundary-deco-bot-2.svg') no-repeat center / cover;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &::after {
+      bottom: -40px;
+    }
+  }
+}
