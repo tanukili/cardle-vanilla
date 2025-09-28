@@ -22,4 +22,62 @@
       0px 8px 8px 0px rgba($gray-700, 0.04),
       0px 19px 11px 0px rgba($gray-700, 0.06);
   }
+  @include media-breakpoint-up(md) {
+    height: 240px;
+  }
+}
+
+.pie-chart {
+  @include media-breakpoint-up(xl) {
+    margin-right: -64px;
+  }
+}
+
+.bar-chart {
+  @include media-breakpoint-up(xl) {
+    padding-left: 64px;
+  }
+}
+
+.progress-card {
+  .card-body {
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    @include media-breakpoint-up(xxl) {
+      gap: 40px;
+    }
+  }
+  .progress-num {
+    width: 37px;
+    margin-left: 4px;
+    @include media-breakpoint-up(xxl) {
+      width: 48px;
+      margin-left: 0;
+    }
+  }
+}
+
+#card-box-swiper {
+  .swiper-slide {
+    width: 244px;
+    @include media-breakpoint-up(lg) {
+      width: 296px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 416px;
+    }
+  }
+}
+
+#current-cards-swiper {
+  .swiper-wrapper {
+    height: 626px;
+    @include media-breakpoint-up(xl) {
+      width: 706px;
+    }
+  }
 }

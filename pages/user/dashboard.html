@@ -10,12 +10,12 @@
     <!-- 導覽列 -->
     <%- include('./layout/header'); -%>
     <main class="flex-grow-1">
-      <section class="text-center pt-20 pb-14" style="background-color: #fafafa">
+      <section class="text-center pt-20 pb-14 pt-lg-25 pb-lg-30" style="background-color: #fafafa">
         <div class="container">
-          <h2 class="fs-xl mb-4">
-            哈囉！<span class="badge badge-lg badge-secondary fs-xl mx-2 lh-base">Jennie</span>！
+          <h2 class="fs-xl text-gray-700 mb-4 fs-md-3xl">
+            哈囉！<span class="badge badge-lg badge-secondary fs-xl mx-2 lh-base lh-md-sm fs-md-3xl">Jennie</span>！
           </h2>
-          <h1 class="fs-2xl mb-13">今天有任何靈感嗎？</h1>
+          <h1 class="fs-2xl text-gray-700 mb-13 fs-md-4xl mb-md-16">今天有任何靈感嗎？</h1>
           <nav class="nav nav-underline justify-content-center mb-10">
             <div class="nav-item d-flex" id="dashboard-nav-tab" role="tablist">
               <button
@@ -46,8 +46,8 @@
               </button>
             </div>
           </nav>
-          <form class="">
-            <div class="tab-content mb-10">
+          <form class="row">
+            <div class="tab-content mb-10 col-md-8 mx-md-auto">
               <div
                 class="tab-pane fade show active"
                 id="nav-add"
@@ -69,13 +69,17 @@
                 ></textarea>
               </div>
             </div>
-            <button class="btn btn-primary w-100" type="submit">新增</button>
+            <div class="col-12">
+              <button class="btn btn-primary w-100 w-md-auto fs-md-xl py-md-4 px-md-6" type="submit">新增</button>
+            </div>
           </form>
         </div>
       </section>
-      <section class="pt-14 pb-6">
+      <section class="pt-14 pb-6 pt-lg-20 pb-lg-15">
         <div class="container">
-          <h2 class="fs-xl lh-base mb-8 pb-6 border-bottom border-gray-200 d-flex align-items-center">
+          <h2
+            class="fs-xl lh-base mb-8 pb-6 border-bottom border-gray-200 d-flex align-items-center fs-md-3xl lh-md-sm mb-md-10"
+          >
             學習狀態分析
             <a
               class="lh-1"
@@ -85,64 +89,82 @@
               aria-expanded="false"
               aria-controls="collapseExample"
             >
-              <span class="material-symbols-outlined ms-2"> keyboard_arrow_down </span>
+              <span class="material-symbols-outlined align-bottom ms-2 ms-md-4 fs-md-3xl"> keyboard_arrow_down </span>
             </a>
           </h2>
         </div>
         <div class="collapse show" id="collapseExample">
-          <!-- 圓餅圖 -->
           <div class="container">
-            <div class="card bg-gray-0 border-primary-100 rounded-4 mb-8">
-              <div class="card-body d-flex flex-column">
-                <h3 class="fs-l lh-base fw-normal text-primary-900 mb-4">本月學習主題</h3>
-                <div class="mx-auto my-3" style="width: 180px; height: 180px">
-                  <canvas id="themePie"></canvas>
+            <div class="row">
+              <!-- 圓餅圖 -->
+              <div class="co-12 col-lg-6 col-xl-5 mb-8 mb-lg-0">
+                <div class="pie-chart card bg-gray-0 border-primary-100 rounded-4 h-100">
+                  <div class="card-title p-4 mb-0">
+                    <h3 class="fs-l lh-base fw-normal text-primary-900">本月學習主題</h3>
+                  </div>
+                  <div class="card-body row gx-sm-5">
+                    <div class="col">
+                      <div class="mx-auto my-3 me-sm-2" style="width: 180px; height: 180px">
+                        <canvas id="themePie"></canvas>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-6 d-sm-flex align-items-center">
+                      <ul
+                        class="list-unstyled mx-auto mb-0 px-3 d-flex flex-wrap flex-sm-column justify-content-between align-items-center py-1 align-items-sm-start ms-sm-2 px-sm-0"
+                        style="max-width: 288px; min-width: 164px"
+                      >
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block bg-secondary-500 rounded-circle me-2"
+                              style="width: 8px; height: 8px"
+                            ></span
+                            >網頁切板: 70%
+                          </p>
+                        </li>
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block rounded-circle me-2"
+                              style="width: 8px; height: 8px; background-color: #ff9e69"
+                            ></span
+                            >JavaScrip: 20%
+                          </p>
+                        </li>
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block rounded-circle me-2"
+                              style="width: 8px; height: 8px; background-color: #fed0a7"
+                            ></span
+                            >料理基礎: 10%
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <ul class="list-unstyled mx-6 mb-0 row gx-4 gy-2">
-                  <li class="col-6">
-                    <p class="d-flex align-items-center fs-s text-gray-700">
-                      <span class="d-block bg-secondary-500 rounded-circle me-2" style="width: 8px; height: 8px"></span
-                      >網頁切板: 70%
-                    </p>
-                  </li>
-                  <li class="col-6">
-                    <p class="d-flex align-items-center fs-s text-gray-700">
-                      <span
-                        class="d-block rounded-circle me-2"
-                        style="width: 8px; height: 8px; background-color: #ff9e69"
-                      ></span
-                      >JavaScrip: 20%
-                    </p>
-                  </li>
-                  <li class="col-6">
-                    <p class="d-flex align-items-center fs-s text-gray-700">
-                      <span
-                        class="d-block rounded-circle me-2"
-                        style="width: 8px; height: 8px; background-color: #fed0a7"
-                      ></span
-                      >料理基礎: 10%
-                    </p>
-                  </li>
-                </ul>
               </div>
-            </div>
-          </div>
-          <!-- 長條圖 -->
-          <div class="overflow-scroll scrollbar-none container mb-8">
-            <div class="card bg-gray-0 border-primary-100 rounded-4" style="min-width: 662px">
-              <div class="card-title p-4 mb-0">
-                <h3 class="fs-l lh-base fw-normal text-primary-900">學習時間 (分)</h3>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <canvas id="spendTimeBar" style="height: 221px"></canvas>
+              <!-- 長條圖 -->
+              <div class="bar-chart col-12 col-lg-6 col-xl-7 mb-8 mb-md-10 mb-lg-0">
+                <div class="overflow-scroll scrollbar-none">
+                  <div class="card bg-gray-0 border-primary-100 rounded-4" style="min-width: 662px">
+                    <div class="card-title p-4 mb-0">
+                      <h3 class="fs-l lh-base fw-normal text-primary-900">學習時間 (分)</h3>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                      <canvas id="spendTimeBar" style="height: 221px"></canvas>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="container py-14">
-        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200">學習進度追蹤</h2>
-        <div class="scrollbar-none w-100 overflow-scroll mb-8">
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10">學習進度追蹤</h2>
+        <div class="scrollbar-none w-100 overflow-scroll mb-8 mb-md-10">
           <nav class="nav nav-pills nav-fill gap-6" style="width: max-content">
             <a class="nav-link border border-primary active" aria-current="page" href="#">顯示全部</a>
             <a class="nav-link border border-primary d-flex align-items-center" href="#"
@@ -158,9 +180,9 @@
         </div>
         <ul class="list-unstyled d-flex flex-column gap-6">
           <li>
-            <div class="card rounded-4 bg-gray-0 border-gray-200">
-              <div class="card-body">
-                <h3 class="fs-m fw-normal d-flex align-items-center mb-4">
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
                   <span class="material-symbols-outlined text-gray-600 me-3"> book </span>
                   <span class="lh-base text-dark text-truncate">金魚都能懂的CSS 必學屬性：網頁設計必備寶典</span>
                 </h3>
@@ -175,18 +197,25 @@
                   >
                     <div class="progress-bar w-50"></div>
                   </div>
-                  <small class="text-gray-700 text-end ms-1" style="width: 37px">50%</small>
-                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4" type="button">
+                  <small class="progress-num text-gray-700 text-end">50%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </button>
                 </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
               </div>
             </div>
           </li>
           <li>
-            <div class="card rounded-4 bg-gray-0 border-gray-200">
-              <div class="card-body">
-                <h3 class="fs-m fw-normal d-flex align-items-center mb-4">
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
                   <span class="material-symbols-outlined text-gray-600 me-3"> book </span>
                   <span class="lh-base text-dark text-truncate"
                     >看完這本就會懂！無痛攻克 JavaScript 面試必考觀念與技巧</span
@@ -197,24 +226,31 @@
                     class="progress flex-grow-1"
                     role="progressbar"
                     aria-label="learning-progress"
-                    aria-valuenow="50"
+                    aria-valuenow="75"
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
                     <div class="progress-bar w-75"></div>
                   </div>
-                  <small class="text-gray-700 text-end ms-1" style="width: 37px">75%</small>
-                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4" type="button">
+                  <small class="progress-num text-gray-700 text-end">75%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </button>
                 </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
               </div>
             </div>
           </li>
           <li>
-            <div class="card rounded-4 bg-gray-0 border-gray-200">
-              <div class="card-body">
-                <h3 class="fs-m fw-normal d-flex align-items-center mb-4">
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
                   <span class="material-symbols-outlined text-gray-600 me-3"> live_tv </span>
                   <span class="lh-base text-dark text-truncate">TypeScript 中文基礎課程</span>
                 </h3>
@@ -229,46 +265,25 @@
                   >
                     <div class="progress-bar w-25"></div>
                   </div>
-                  <small class="text-gray-700 text-end ms-1" style="width: 37px">25%</small>
-                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4" type="button">
+                  <small class="progress-num text-gray-700 text-end">25%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </button>
                 </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
               </div>
             </div>
           </li>
           <li>
-            <div class="card rounded-4 bg-gray-0 border-gray-200">
-              <div class="card-body">
-                <h3 class="fs-m fw-normal d-flex align-items-center mb-4">
-                  <span class="material-symbols-outlined text-gray-600 me-3"> music_video </span>
-                  <span class="lh-base text-dark text-truncate"
-                    >EP21｜QA 真的只是在找 Bug 嗎？帶你解鎖測試員的真實日常</span
-                  >
-                </h3>
-                <div class="d-flex align-items-center">
-                  <div
-                    class="progress flex-grow-1"
-                    role="progressbar"
-                    aria-label="learning-progress"
-                    aria-valuenow="0"
-                    aria-valuemin="0"
-                    aria-valuemax="100"
-                  >
-                    <div class="progress-bar w-0"></div>
-                  </div>
-                  <small class="text-gray-700 text-end ms-1" style="width: 37px">0%</small>
-                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4" type="button">
-                    <span class="material-symbols-outlined"> edit_square </span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="card rounded-4 bg-gray-0 border-gray-200">
-              <div class="card-body">
-                <h3 class="fs-m fw-normal d-flex align-items-center mb-4">
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
                   <span class="material-symbols-outlined text-gray-600 me-3"> music_video </span>
                   <span class="lh-base text-dark text-truncate"
                     >EP39｜第一次當 QA 測試員就上手！軟體新人也能輕鬆入門測試工作</span
@@ -285,45 +300,107 @@
                   >
                     <div class="progress-bar w-100"></div>
                   </div>
-                  <small class="text-gray-700 text-end ms-1" style="width: 37px">100%</small>
-                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4" type="button">
+                  <small class="progress-num text-gray-700 text-end">100%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
                     <span class="material-symbols-outlined"> edit_square </span>
                   </button>
                 </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> music_video </span>
+                  <span class="lh-base text-dark text-truncate"
+                    >EP21｜QA 真的只是在找 Bug 嗎？帶你解鎖測試員的真實日常</span
+                  >
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar w-0"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">0%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
               </div>
             </div>
           </li>
         </ul>
       </section>
-      <section class="container py-14">
-        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200">常用卡片盒</h2>
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10 mb-lg-20">常用卡片盒</h2>
         <div id="card-box-swiper" class="swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide" style="width: 244px">
+            <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-1.png" alt="CSS 基礎-封面" />
-                  <h3 class="fs-m lh-base tracking-2 text-center">CSS 基礎</h3>
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">CSS 基礎</h3>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="width: 244px">
+            <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <img
                     class="mb-4 rounded-1"
                     src="/assets/images/dashboard/card-box-cover-2.png"
                     alt="React 框架-封面"
                   />
-                  <h3 class="fs-m lh-base tracking-2 text-center">React 框架</h3>
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">React 框架</h3>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="width: 244px">
+            <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-secondary-300">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-3.png" alt="料理基礎-封面" />
-                  <h3 class="fs-m lh-base tracking-2 text-center">料理基礎</h3>
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">料理基礎</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
+                <div class="card-body p-xl-6">
+                  <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-1.png" alt="CSS 基礎-封面" />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">CSS 基礎</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-2.png"
+                    alt="React 框架-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">React 框架</h3>
                 </div>
               </div>
             </div>
@@ -331,13 +408,13 @@
           <div class="swiper-scrollbar scrollbar-primary mt-20"></div>
         </div>
       </section>
-      <section class="container py-14">
-        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200">最近新增卡片</h2>
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10 mb-lg-20">最近新增卡片</h2>
         <div id="current-cards-swiper" class="swiper">
-          <div class="swiper-wrapper" style="height: 626px">
+          <div class="swiper-wrapper">
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
                   <p>
                     常見單位（px, %, rem）<br />px：固定像素<br />
@@ -348,7 +425,7 @@
                 </div>
               </div>
               <div class="card rounded-4 bg-gray-0 border-gray-200">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
                   <p>實用建議</p>
                   <ul class="mb-0">
@@ -361,7 +438,7 @@
             </div>
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
                   <p>
                     和風醬汁：醬油 × 味醂 × 高湯<br />常見比例為：<br />1（醬油）：1（味醂）：2（高湯）
@@ -370,7 +447,7 @@
                 </div>
               </div>
               <div class="card rounded-4 bg-gray-0 border-gray-200">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
                   <p>
                     黃金比例：醬油 × 糖 × 米酒<br />
@@ -385,7 +462,7 @@
             </div>
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
                   <p>
                     麻婆豆腐食譜（2-3人份）<br /><br />
@@ -409,13 +486,13 @@
             </div>
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-orange lh-base mb-4">React</span>
                   <p>props vs state<br />props 是由父元件傳入的資料<br />state 是元件內部的狀態，可被修改<br /></p>
                 </div>
               </div>
               <div class="card rounded-4 bg-gray-0 border-gray-200">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
                   <p>
                     Flexbox（彈性盒子）<br /><code>display: flex;</code>
@@ -431,7 +508,7 @@
             </div>
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
                   <p>
                     Box Model（盒模型）<br />CSS 的每個元素都像一個盒子，由以下幾個部分構成（由內而外）：
@@ -446,7 +523,7 @@
                 </div>
               </div>
               <div class="card rounded-4 bg-gray-0 border-gray-200">
-                <div class="card-body">
+                <div class="card-body p-xl-6">
                   <span class="badge badge-orange lh-base mb-4">React</span>
                   <p>
                     useState — 狀態管理入門 用來宣告與更新元件內的狀態 const [count, setCount] = useState(0)<br />setCount(count
@@ -457,7 +534,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-scrollbar scrollbar-primary mt-6"></div>
+          <div class="swiper-scrollbar scrollbar-primary mt-6 mt-md-10"></div>
         </div>
       </section>
     </main>
