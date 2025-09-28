@@ -39,3 +39,23 @@ $utilities: map-merge(
 .font-Manrope {
   font-family: 'Manrope', 'sans-serif';
 }
+
+// letter spacing 字距
+.tracking-2 {
+  letter-spacing: 0.02em;
+}
+
+// 隱藏滾動條
+.scrollbar-none {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+// 筆記內程式碼的樣式
+.code-area {
+  white-space: pre-wrap; // 保留縮排 + 自動斷行
+  word-break: break-word; // 字長過長時斷行
+}

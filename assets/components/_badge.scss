@@ -1,0 +1,17 @@
+.badge-lg {
+  --bs-badge-padding-y: 0.5rem;
+  --bs-badge-padding-x: 1rem;
+}
+
+.badge-secondary {
+  --bs-badge-color: #{$tag-secondary};
+  background-color: $tag-secondary-bg;
+}
+.badge-success {
+  --bs-badge-color: #{$tag-success};
+  background-color: $tag-success-bg;
+}
+.badge-orange {
+  --bs-badge-color: #{$tag-orange};
+  background-color: $tag-orange-bg;
+}
