@@ -103,13 +103,25 @@
   }
 }
 .faq-item {
-  background-color: #f1f6fd;;
-  border-radius: 12px;
+  /* 預設狀態 (未展開) - 白色背景 */
+  background-color: #ffffff; 
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: 16px 20px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
   transition: all 0.3s ease;
 }
 
+/* 展開狀態 - 藍色背景 */
+.faq-item.expanded {
+  background-color: #EBF1FA; /* 淺藍色，較舒適且有高對比 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #000;
+}
+
+/* -------------------
+    其他自定義樣式
+    ------------------- */
 .faq-item:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -117,30 +129,47 @@
 .faq-question {
   background: none;
   border: none;
-  font-size: 1.1rem;
   padding: 0;
-  color: #000;
+  color: #1A1A1A;
   cursor: pointer;
+  text-align: left;
+  transition: color 0.3s ease; 
 }
-
+.faq-item.expanded .faq-question {
+  color: #1A1A1A; 
+}
 .faq-question:focus {
   outline: none;
+  box-shadow: none;
 }
 
 .faq-icon {
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
   font-size: 1.5rem;
 }
 
+/* 展開時圖標顏色和旋轉 */
 .faq-question[aria-expanded="true"] .faq-icon {
   transform: rotate(90deg);
 }
 
 .faq-answer {
-  background-color: #f1f6fd;;
-  border-radius: 12px;
-  // padding: 16px 20px;
+  /* 讓答案區域背景透明，以便看到父層 .faq-item 的藍色背景 */
+  background-color: transparent; 
   color: #333;
+  /* 調整：增加頂部、底部與水平填充，防止內容在展開時被遮擋或跳動 */
+  padding: 0.5rem 0.5rem 0.5rem 0; 
+  /* 覆寫 Bootstrap 的 .accordion-body 樣式 */
+}
+
+/* 內文段落樣式調整 */
+.faq-answer p {
+    margin-bottom: 0.5rem;
+}
+
+/* 確保答案內最後一個段落沒有底部邊距，讓卡片收尾更乾淨 */
+.faq-answer p:last-child {
+    margin-bottom: 0 !important;
 }
 /* 背景區塊 */
 .background-blocks {
@@ -167,7 +196,7 @@
 
 /* 左下 */
 .bottom-left {
-  top: 182px;
+  top: 257px;
   left: 0;
   width: 302px;
 }
@@ -222,7 +251,7 @@
   &::after {
     content: '';
     position: absolute;
-    bottom: -23px;
+    bottom: -42px;
     left: 0;
     right: 0;
     aspect-ratio: auto;
@@ -230,7 +259,13 @@
     background: url('/assets/images/detail/wave-bottom1.svg') no-repeat center / contain;
     z-index: -1;
   }
+      @include media-breakpoint-down(md) {
+      &::after {
+        bottom: -30px;
+      }
+    }
 }
 // *,*::before,*::after{
 //   outline: 2px solid green;
 // }
+// 

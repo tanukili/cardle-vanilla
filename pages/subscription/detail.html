@@ -10,13 +10,13 @@
     <%- include('./layout/header'); -%>
     <section class="bg-gray-98 py-md-25 py-20">
       <div class="container text-center">
-        <h1 class="fs-md-5xl fs-4 pb-md-6 border-bottom mb-6">選擇適合你的使用方案</h1>
+        <h1 class="fs-md-5xl fs-4 pb-6 border-bottom mb-6">選擇適合你的使用方案</h1>
         <div class="mb-6">
           <span class="fs-md-2xl fs-s badge text-tag-secondary bg-tag-secondary-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 簡單起步</span>
           <span class="fs-md-2xl fs-s badge text-tag-orange bg-tag-orange-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 彈性升級</span>
           <span class="fs-md-2xl fs-s badge text-tag-success bg-tag-success-bg py-md-2 px-md-4 py-1 px-2 rounded-1"># 讓筆記陪你成長</span>
         </div>
-        <p class="fs-md-2xl fs-l fw-bold mb-md-10 mb-20">無論你是學生還是專業人士，我們都有適合你的方案。</p>
+        <p class="fs-md-2xl fs-l fw-bold mb-md-20 mb-10 d-flex flex-column flex-md-row justify-content-center align-items-center text-center" >無論你是學生還是專業人士，<br class="d-md-none">我們都有適合你的方案。</p>
       </div>
         <div class="plan-swiper swiper">
           <div class="swiper-wrapper">
@@ -160,7 +160,7 @@
                         <strong class="title">我想進一步了解方案，可以說明方案的詳細內容嗎？</strong>
                         <span class="faq-icon material-symbols-outlined">chevron_right</span>
                       </button>
-                      <div id="faq1" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                      <div id="faq1" class="collapse faq-answer mt-2 accordion-body" data-bs-parent="#faqAccordion">
                         <p class="mb-1">月繳方案：可以隨時取消，下個月不再自動續費。</p>
                         <p class="mb-0">年繳方案：購買後會持續提供一年服務，中途不提供退款。</p>
                       </div>
@@ -218,9 +218,9 @@
     </section>
 <section class="comment1">
 <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
-      <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
-        現在就開始你的學習旅程，打造你的知識網絡！
-      </h3>
+  <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
+    現在就開始你的學習旅程，<br class="d-md-none">打造你的知識網絡！
+  </h3>
       <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
         立即開始
       </a>
@@ -245,18 +245,50 @@
         initialSlide: 2,
         centeredSlides: true,
         slidesPerView: 'auto',
-        spaceBetween: 24,
+        spaceBetween: 40,
         centerInsufficientSlides: true, // 不足時置中顯示（不需要捲動）
         centeredSlidesBounds: true, // 夾住邊界，避免左右多餘空隙
         resistanceRatio: 0, // 拖到邊界不會被「拉動」
         watchOverflow: true, // 不足以滾動時自動停用滑動
-        // breakpoints: {
-        //   992: {
-        //     spaceBetween: 40,
-        //   },
-        // },
+        breakpoints: {
+          567: {
+            spaceBetween: 24, // 間距設為 24px (滿足您的需求)
+          },
+          // 桌面寬度設定
+          // 當視窗寬度 >= 992px 時，套用以下設定
+          992: {
+            spaceBetween: 40
+          }
+        },
       });
       
+        // JavaScript 邏輯：監聽 Bootstrap 摺疊事件，並為父層 .faq-item 新增/移除 'expanded' 類別
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqAccordion = document.getElementById('faqAccordion');
+
+            if (faqAccordion) {
+                // 監聽展開事件
+                faqAccordion.addEventListener('show.bs.collapse', function (event) {
+                    // event.target 是觸發事件的 collapse div (即 .faq-answer)
+                    const faqItem = event.target.closest('.faq-item');
+                    if (faqItem) {
+                        // 展開時，將父層容器背景設為藍色
+                        faqItem.classList.add('expanded');
+                    }
+                });
+
+                // 監聽收合事件
+                faqAccordion.addEventListener('hide.bs.collapse', function (event) {
+                    // event.target 是觸發事件的 collapse div (即 .faq-answer)
+                    const faqItem = event.target.closest('.faq-item');
+                    if (faqItem) {
+                        // 收合時，將父層容器背景設為白色
+                        faqItem.classList.remove('expanded');
+                    }
+                });
+            }
+        });
+    </script>
     </script>
   </body>
 </html>
