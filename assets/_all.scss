@@ -145,7 +145,7 @@
 /* 背景區塊 */
 .background-blocks {
   position: relative;
-  min-height: 100vh;
+  // min-height: 100vh;
   overflow: hidden;
   // padding: 40px;
 }
@@ -160,7 +160,7 @@
 }
 /* 右上 */
 .top-right {
-  top: 0;
+  top: 20px;
   right: 0;
   width: 372px;
 }
