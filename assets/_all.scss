@@ -92,3 +92,14 @@
 @import './pages/index';
 @import './pages/sign-up';
 @import './pages/features';
+.plan-swiper {
+  .swiper-slide {
+    width: 280px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .swiper-slide {
+      width: 352px;
+    }
+  }
+}
