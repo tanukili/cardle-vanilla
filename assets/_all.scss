@@ -102,3 +102,96 @@
     }
   }
 }
+.faq-item {
+  background-color: #f1f6fd;;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  padding: 0;
+  color: #000;
+  cursor: pointer;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  background-color: #f1f6fd;;
+  border-radius: 12px;
+  // padding: 16px 20px;
+  color: #333;
+}
+/* 背景區塊 */
+.background-blocks {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  // padding: 40px;
+}
+
+/* 色塊基本設定 */
+.colorblocks {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none; /* 不擋點擊 */
+  max-width: 100%;      /* 保證不會超過容器 */
+  height: auto;
+}
+/* 右上 */
+.top-right {
+  top: 0;
+  right: 0;
+  width: 372px;
+}
+
+/* 左下 */
+.bottom-left {
+  top: 182px;
+  left: 0;
+  width: 302px;
+}
+
+/* 平板以下 (縮小一點) */
+@media (max-width: 768px) {
+  .top-right {
+    width: 270px;
+    right: -77px;
+    top:13px;
+  }
+  .bottom-left {
+    width: 214px;
+    bottom: 56px;
+    left: -109px;
+  }
+}
+.title{
+  text-align: left;
+}
+@media (max-width: 768px) {
+    .test > .container {
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+}
