@@ -188,10 +188,49 @@
 .title{
   text-align: left;
 }
-@media (max-width: 768px) {
-    .test > .container {
-      max-width: 100%;
-      padding-left: 0;
-      padding-right: 0;
-    }
+@include media-breakpoint-down(md){
+  .test > .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
+.comment1{
+  position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
+    z-index: 2;
+    padding: 100px 0;
+    background-color: #EAFFE1;
+     &::before {
+      bottom: -32px;
+      aspect-ratio: auto;
+      height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+      content: '';
+      position: absolute;
+      width: clamp(23.4375rem, 0rem + 100vw, 120rem);
+      background: url('/assets/images/detail/wave-top1.svg') no-repeat center / cover;
+      z-index: -1;
+      top: -65px;
+    }
+    @include media-breakpoint-down(md) {
+      &::before {
+        top: -20px;
+      }
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -23px;
+    left: 0;
+    right: 0;
+    aspect-ratio: auto;
+    height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+    background: url('/assets/images/detail/wave-bottom1.svg') no-repeat center / contain;
+    z-index: -1;
+  }
+}
+// *,*::before,*::after{
+//   outline: 2px solid green;
+// }
