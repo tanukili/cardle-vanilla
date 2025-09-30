@@ -9,7 +9,7 @@
   <body class="d-flex flex-column min-vh-100">
     <!-- 導覽列 -->
     <%- include('./layout/header'); -%>
-    <main class="flex-grow-1">
+    <main class="flex-grow-1 overflow-hidden">
       <section class="text-center pt-20 pb-14 pt-lg-25 pb-lg-30" style="background-color: #fafafa">
         <div class="container">
           <h2 class="fs-xl text-gray-700 mb-4 fs-md-3xl">
@@ -75,45 +75,45 @@
           </form>
         </div>
       </section>
-      <section class="pt-14 pb-6 pt-lg-20 pb-lg-15">
+      <section class="pt-14 pb-6 pt-lg-20 pb-lg-10">
         <div class="container">
           <h2
             class="fs-xl lh-base mb-8 pb-6 border-bottom border-gray-200 d-flex align-items-center fs-md-3xl lh-md-sm mb-md-10"
           >
             學習狀態分析
             <a
-              class="lh-1"
+              class="lh-1 ms-2 ms-md-4"
               data-bs-toggle="collapse"
-              href="#collapseExample"
+              href="#chartCollapse"
               role="button"
               aria-expanded="false"
-              aria-controls="collapseExample"
+              aria-controls="chartCollapse"
             >
-              <span class="material-symbols-outlined align-bottom ms-2 ms-md-4 fs-md-3xl"> keyboard_arrow_down </span>
+              <span class="material-symbols-outlined align-bottom fs-md-3xl"> keyboard_arrow_down </span>
             </a>
           </h2>
         </div>
-        <div class="collapse show" id="collapseExample">
-          <div class="container">
-            <div class="row">
+        <div class="collapse show" id="chartCollapse">
+          <div class="container mb-lg-10">
+            <div class="row gx-6">
               <!-- 圓餅圖 -->
-              <div class="co-12 col-lg-6 col-xl-5 mb-8 mb-lg-0">
-                <div class="pie-chart card bg-gray-0 border-primary-100 rounded-4 h-100">
-                  <div class="card-title p-4 mb-0">
-                    <h3 class="fs-l lh-base fw-normal text-primary-900">本月學習主題</h3>
+              <div class="pie-chart col-12 col-lg-6 col-xl-5 mb-8 mb-lg-0">
+                <div class="card bg-gray-0 border-primary-100 rounded-4 h-100">
+                  <div class="card-title p-4 mb-0 p-xl-6">
+                    <h3 class="fs-l lh-base fw-normal text-primary-900 fs-xl-xl">本月學習主題</h3>
                   </div>
-                  <div class="card-body row gx-sm-5">
-                    <div class="col">
-                      <div class="mx-auto my-3 me-sm-2" style="width: 180px; height: 180px">
-                        <canvas id="themePie"></canvas>
-                      </div>
+                  <div
+                    class="card-body d-flex flex-column flex-sm-row justify-content-center align-items-center py-0 py-sm-4 py-xl-6"
+                  >
+                    <div class="pie-container pe-sm-3">
+                      <canvas id="themePie" class="p-3"></canvas>
                     </div>
-                    <div class="col-12 col-sm-6 d-sm-flex align-items-center">
+                    <div class="d-sm-flex align-items-center pt-4 pt-sm-0 ps-sm-3">
                       <ul
-                        class="list-unstyled mx-auto mb-0 px-3 d-flex flex-wrap flex-sm-column justify-content-between align-items-center py-1 align-items-sm-start ms-sm-2 px-sm-0"
+                        class="list-unstyled mx-auto mb-2 px-3 d-flex flex-wrap flex-sm-column justify-content-between align-items-center py-1 align-items-sm-start ps-sm-2 pe-sm-0 mb-sm-0"
                         style="max-width: 288px; min-width: 164px"
                       >
-                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
                           <p class="d-flex align-items-center fs-s text-gray-700">
                             <span
                               class="d-block bg-secondary-500 rounded-circle me-2"
@@ -122,7 +122,7 @@
                             >網頁切板: 70%
                           </p>
                         </li>
-                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
                           <p class="d-flex align-items-center fs-s text-gray-700">
                             <span
                               class="d-block rounded-circle me-2"
@@ -131,7 +131,7 @@
                             >JavaScrip: 20%
                           </p>
                         </li>
-                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0">
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
                           <p class="d-flex align-items-center fs-s text-gray-700">
                             <span
                               class="d-block rounded-circle me-2"
@@ -148,12 +148,12 @@
               <!-- 長條圖 -->
               <div class="bar-chart col-12 col-lg-6 col-xl-7 mb-8 mb-md-10 mb-lg-0">
                 <div class="overflow-scroll scrollbar-none">
-                  <div class="card bg-gray-0 border-primary-100 rounded-4" style="min-width: 662px">
-                    <div class="card-title p-4 mb-0">
-                      <h3 class="fs-l lh-base fw-normal text-primary-900">學習時間 (分)</h3>
+                  <div class="card bg-gray-0 border-primary-100 rounded-4">
+                    <div class="card-title p-4 mb-0 p-xl-6">
+                      <h3 class="fs-l lh-base fw-normal text-primary-900 fs-xl-xl">學習時間 (分)</h3>
                     </div>
-                    <div class="card-body d-flex flex-column">
-                      <canvas id="spendTimeBar" style="height: 221px"></canvas>
+                    <div class="bar-container card-body d-flex flex-column p-xl-6">
+                      <canvas id="spendTimeBar"></canvas>
                     </div>
                   </div>
                 </div>
@@ -178,7 +178,7 @@
             >
           </nav>
         </div>
-        <ul class="list-unstyled d-flex flex-column gap-6">
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-6">
           <li>
             <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
               <div class="card-body p-lg-6">
@@ -195,7 +195,7 @@
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar w-50"></div>
+                    <div class="progress-bar rounded-2 w-50"></div>
                   </div>
                   <small class="progress-num text-gray-700 text-end">50%</small>
                   <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
@@ -230,7 +230,7 @@
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar w-75"></div>
+                    <div class="progress-bar rounded-2 w-75"></div>
                   </div>
                   <small class="progress-num text-gray-700 text-end">75%</small>
                   <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
@@ -263,7 +263,7 @@
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar w-25"></div>
+                    <div class="progress-bar rounded-2 w-25"></div>
                   </div>
                   <small class="progress-num text-gray-700 text-end">25%</small>
                   <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
@@ -298,7 +298,7 @@
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar w-100"></div>
+                    <div class="progress-bar rounded-2 w-100"></div>
                   </div>
                   <small class="progress-num text-gray-700 text-end">100%</small>
                   <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
@@ -333,7 +333,7 @@
                     aria-valuemin="0"
                     aria-valuemax="100"
                   >
-                    <div class="progress-bar w-0"></div>
+                    <div class="progress-bar rounded-2 w-0"></div>
                   </div>
                   <small class="progress-num text-gray-700 text-end">0%</small>
                   <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
@@ -359,7 +359,11 @@
             <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
                 <div class="card-body p-xl-6">
-                  <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-1.png" alt="CSS 基礎-封面" />
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-1.png"
+                    alt="CSS 基礎-封面"
+                  />
                   <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">CSS 基礎</h3>
                 </div>
               </div>
@@ -368,7 +372,7 @@
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
                 <div class="card-body p-xl-6">
                   <img
-                    class="mb-4 rounded-1"
+                    class="cover-img mb-4 rounded-1"
                     src="/assets/images/dashboard/card-box-cover-2.png"
                     alt="React 框架-封面"
                   />
@@ -379,7 +383,11 @@
             <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-secondary-300">
                 <div class="card-body p-xl-6">
-                  <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-3.png" alt="料理基礎-封面" />
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-3.png"
+                    alt="料理基礎-封面"
+                  />
                   <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">料理基礎</h3>
                 </div>
               </div>
@@ -387,8 +395,12 @@
             <div class="swiper-slide">
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
                 <div class="card-body p-xl-6">
-                  <img class="mb-4 rounded-1" src="/assets/images/dashboard/card-box-cover-1.png" alt="CSS 基礎-封面" />
-                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">CSS 基礎</h3>
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-4.jpg"
+                    alt="認識自己-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">認識自己</h3>
                 </div>
               </div>
             </div>
@@ -396,21 +408,23 @@
               <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
                 <div class="card-body p-xl-6">
                   <img
-                    class="mb-4 rounded-1"
-                    src="/assets/images/dashboard/card-box-cover-2.png"
-                    alt="React 框架-封面"
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-5.jpg"
+                    alt="規劃與管理-封面"
                   />
-                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">React 框架</h3>
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">規劃與管理</h3>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-scrollbar scrollbar-primary mt-20"></div>
+          <div class="mt-20">
+            <div class="swiper-scrollbar scrollbar-primary"></div>
+          </div>
         </div>
       </section>
       <section class="container py-14 py-lg-20">
         <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10 mb-lg-20">最近新增卡片</h2>
-        <div id="current-cards-swiper" class="swiper">
+        <div id="current-cards-swiper" class="swiper overflow-visible">
           <div class="swiper-wrapper">
             <div class="swiper-slide" style="width: 300px">
               <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
@@ -451,7 +465,7 @@
                   <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
                   <p>
                     黃金比例：醬油 × 糖 × 米酒<br />
-                    適用於台式紅燒料理，常見比例為： 1（醬油）：1（糖）：1（米酒）<br />
+                    適用於台式紅燒料理，常見比例為：1（醬油）：1（糖）：1（米酒）<br />
                     醬油提鹹香<br />
                     糖增加焦化風味<br />
                     米酒去腥提味<br />
@@ -533,8 +547,86 @@
                 </div>
               </div>
             </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">認識自己</span>
+                  <p>《我得了不想上班的病》中提到的倦怠3類型：</p>
+                  <ol class="mb-0">
+                    <li>過勞</li>
+                    <li>社交疲憊</li>
+                    <li>無聊萎靡</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">認識自己</span>
+                  <p>
+                    過勞型倦怠：<br />
+                    容易出現在一直處與工作狀態、全職育兒的人的身上。過度努力、有責任感。
+                  </p>
+                  <br />
+                  <p>常見跡象：</p>
+                  <ol>
+                    <li>主客觀來看都很忙</li>
+                    <li>時間總是不夠</li>
+                    <li>跟不上的焦慮或內疚</li>
+                    <li>這陣子忙完就好</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
+                  <p>歌劇院蛋糕 Opera Cake</p>
+                  <ol class="mb-0">
+                    <li>
+                      杏仁海綿蛋糕 Joconde
+                      <ul>
+                        <li>杏仁粉 – 80g</li>
+                        <li>低筋麵粉 – 20g</li>
+                        <li>全蛋 – 2顆</li>
+                        <li>糖粉 – 50g</li>
+                        <li>蛋白 – 3顆</li>
+                        <li>砂糖 – 20g</li>
+                        <li>無鹽奶油 – 20g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      咖啡糖液 Coffee Syrup
+                      <ul>
+                        <li>即溶咖啡 – 5g</li>
+                        <li>砂糖 – 30g</li>
+                        <li>熱水 – 100g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      法式奶油霜 French Buttercream
+                      <ul>
+                        <li>無鹽奶油 – 120g</li>
+                        <li>蛋黃 – 3顆</li>
+                        <li>砂糖 – 60g</li>
+                        <li>水 – 25g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      甘納許 Ganache
+                      <ul>
+                        <li>黑巧克力 – 75g</li>
+                        <li>鮮奶油 – 75g</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="swiper-scrollbar scrollbar-primary mt-6 mt-md-10"></div>
+          <div class="mt-6 mt-md-10">
+            <div class="swiper-scrollbar scrollbar-primary"></div>
+          </div>
         </div>
       </section>
     </main>
@@ -569,7 +661,7 @@
         slidesOffsetBefore: 0, // 和容器 padding 搭配，避免開頭/結尾多出空白
         slidesOffsetAfter: 0,
         watchOverflow: true, // 總寬不足時不產生可滑動空白
-        loopAdditionalSlides: 2, // 額外複製到左右兩側的 slide 數量，捲到邊界不會出現空隙或閃動
+        centerInsufficientSlides: true,
         scrollbar: {
           el: '.swiper-scrollbar',
           draggable: true,
@@ -585,6 +677,7 @@
             label: '本週占比（%）',
             data: [70, 20, 10],
             backgroundColor: ['#6190D5', '#FF9E69', '#FED0A7'],
+            borderWidth: 0,
           },
         ],
       };
@@ -638,7 +731,7 @@
           ctx.restore();
         },
       };
-      // 需要補上：畫線
+
       const spendTimeBar = {
         type: 'bar',
         data: spendTimeData,
@@ -654,10 +747,9 @@
             x: {
               grid: {
                 display: false,
-                drawBorder: true,
-                borderColor: '#F3D7D7',
-                borderWidth: 1,
-                borderDash: [7, 7],
+              },
+              border: {
+                display: false,
               },
               ticks: {
                 color: '#2B2B2B',
@@ -670,10 +762,11 @@
               grid: {
                 color: '#F3D7D7',
                 drawBorder: false, // 不畫 y 軸邊框線
-                lineWidth: 1,
-                borderDash: [7, 7], // 水平線虛線
-                drawBorder: false,
                 drawTicks: false,
+              },
+              border: {
+                display: false,
+                dash: [7, 7],
               },
               ticks: {
                 color: '#FCFCFC',

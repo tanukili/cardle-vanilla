@@ -27,15 +27,62 @@
   }
 }
 
+a[href='#chartCollapse'] {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease-in-out;
+  &.collapsed {
+    transform: rotate(0deg);
+  }
+}
+
 .pie-chart {
-  @include media-breakpoint-up(xl) {
-    margin-right: -64px;
+  > * {
+    @include media-breakpoint-up(xl) {
+      margin-right: -52px;
+    }
+  }
+  .pie-container {
+    width: 180px;
+    height: 180px;
   }
 }
 
 .bar-chart {
-  @include media-breakpoint-up(xl) {
-    padding-left: 64px;
+  .overflow-scroll {
+    margin-inline: -12px;
+    @include media-breakpoint-up(sm) {
+      margin-inline: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: 52px;
+    }
+    .card {
+      margin-inline: 12px;
+      @include media-breakpoint-up(sm) {
+        margin-inline: 0;
+      }
+    }
+  }
+
+  .card {
+    width: 662px;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: 52px;
+    }
+  }
+  canvas {
+    width: 630px;
+    // max-width: 646px;
+    max-height: 211px;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 221px;
+    }
   }
 }
 
@@ -62,13 +109,34 @@
 }
 
 #card-box-swiper {
+  &.swiper {
+    overflow: visible;
+    @include media-breakpoint-up(sm) {
+      overflow: hidden;
+    }
+  }
   .swiper-slide {
     width: 244px;
+    @include media-breakpoint-up(md) {
+      width: 216px;
+    }
     @include media-breakpoint-up(lg) {
       width: 296px;
     }
     @include media-breakpoint-up(xl) {
+      width: 356px;
+    }
+    @include media-breakpoint-up(xxl) {
       width: 416px;
+    }
+  }
+  .cover-img {
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+    object-position: center;
+    @include media-breakpoint-up(xl) {
+      height: 266px;
     }
   }
 }
