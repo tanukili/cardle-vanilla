@@ -108,26 +108,26 @@
                     </h3>
                   </div>
                   <ul class="list-unstyled mb-8 text-start">
-                                <li class="mb-3">
-                                  <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
-                                  ><span class="text-gray-1000">無限制建立筆記卡片</span>
-                                </li>
-                                <li class="mb-3">
-                                  <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
-                                  ><span class="text-gray-1000">無限制建立書單</span>
-                                </li>
-                                <li class="mb-3">
-                                  <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
-                                  ><span class="text-gray-1000">標籤分類</span>
-                                </li>
-                                <li class="mb-3">
-                                  <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
-                                  ><span class="text-gray-1000">視覺化關聯地圖</span>
-                                </li>
-                                <li>
-                                  <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
-                                  ><span class="text-gray-1000">進度追蹤與提醒</span>
-                                </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">標籤分類</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">視覺化關聯地圖</span>
+                    </li>
+                    <li>
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">進度追蹤與提醒</span>
+                    </li>
                   </ul>
                 </div>
                 <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案</a>
@@ -219,7 +219,7 @@
 <section class="comment1">
 <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
   <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
-    現在就開始你的學習旅程，<br class="d-md-none">打造你的知識網絡！
+    現在就開始你的學習旅程，<br class="d-lg-none">打造你的知識網絡！
   </h3>
       <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
         立即開始
@@ -251,44 +251,42 @@
         resistanceRatio: 0, // 拖到邊界不會被「拉動」
         watchOverflow: true, // 不足以滾動時自動停用滑動
         breakpoints: {
-          567: {
-            spaceBetween: 24, // 間距設為 24px (滿足您的需求)
+          320: {
+            spaceBetween: 24,
           },
-          // 桌面寬度設定
+          // 567: {
+          //   spaceBetween: 24,
+          // },
           // 當視窗寬度 >= 992px 時，套用以下設定
           992: {
             spaceBetween: 40
           }
         },
       });
-      
-        // JavaScript 邏輯：監聽 Bootstrap 摺疊事件，並為父層 .faq-item 新增/移除 'expanded' 類別
-        document.addEventListener('DOMContentLoaded', () => {
-            const faqAccordion = document.getElementById('faqAccordion');
+document.addEventListener('DOMContentLoaded', () => {
+        const faqAccordion = document.getElementById('faqAccordion');
 
-            if (faqAccordion) {
-                // 監聽展開事件
-                faqAccordion.addEventListener('show.bs.collapse', function (event) {
-                    // event.target 是觸發事件的 collapse div (即 .faq-answer)
-                    const faqItem = event.target.closest('.faq-item');
-                    if (faqItem) {
-                        // 展開時，將父層容器背景設為藍色
-                        faqItem.classList.add('expanded');
-                    }
-                });
+        if (faqAccordion) {
+            // 展開：立即添加 class
+            faqAccordion.addEventListener('show.bs.collapse', function (event) {
+                const faqItem = event.target.closest('.faq-item');
+                faqItem && faqItem.classList.add('expanded');
+            });
 
-                // 監聽收合事件
-                faqAccordion.addEventListener('hide.bs.collapse', function (event) {
-                    // event.target 是觸發事件的 collapse div (即 .faq-answer)
-                    const faqItem = event.target.closest('.faq-item');
-                    if (faqItem) {
-                        // 收合時，將父層容器背景設為白色
+            // 收合：延遲移除 expanded class
+            faqAccordion.addEventListener('hide.bs.collapse', function (event) {
+                const faqItem = event.target.closest('.faq-item');
+                
+                if (faqItem) {
+                    // 延遲 50 毫秒 (0.05s)
+                    setTimeout(() => {
                         faqItem.classList.remove('expanded');
-                    }
-                });
-            }
-        });
-    </script>
+                    }, 300); 
+                }
+            });
+        }
+    });
+</script>
     </script>
   </body>
 </html>
