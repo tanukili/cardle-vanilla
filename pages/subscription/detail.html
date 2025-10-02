@@ -131,10 +131,8 @@
                   </ul>
                 </div>
                 <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案</a>
-              </div>
-            
-            </div>
-            
+              </div>           
+            </div>            
           </div>
         </div> 
     </section>
@@ -142,7 +140,7 @@
       <div class="container">
         <h2 class="fs-md-5xl fs-4 pb-6 border-bottom text-center">FAQ</h2>
       </div> 
-      <div class="test">
+      <div class="faq-area">
         <div class="container">
           <div class="background-blocks">
               <img class="colorblocks top-right"  src="../../assets/images/detail/deco1.svg" alt="">
@@ -216,17 +214,17 @@
         </div> 
       </div>
     </section>
-<section class="comment1">
-<div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
-  <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
-    現在就開始你的學習旅程，<br class="d-lg-none">打造你的知識網絡！
-  </h3>
-      <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
-        立即開始
-      </a>
-    </div>
-</section>
-<%- include('./layout/footer'); -%>
+    <section class="calltoactionarea">
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
+      <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
+        現在就開始你的學習旅程，<br class="d-lg-none">打造你的知識網絡！
+      </h3>
+          <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
+            立即開始
+          </a>
+        </div>
+    </section>
+    <%- include('./layout/footer'); -%>
 
 
 
@@ -254,16 +252,12 @@
           320: {
             spaceBetween: 24,
           },
-          // 567: {
-          //   spaceBetween: 24,
-          // },
-          // 當視窗寬度 >= 992px 時，套用以下設定
           992: {
             spaceBetween: 40
           }
         },
       });
-document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener('DOMContentLoaded', () => {
         const faqAccordion = document.getElementById('faqAccordion');
 
         if (faqAccordion) {
@@ -285,8 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
-    });
-</script>
-    </script>
+          });
+      </script>
   </body>
 </html>

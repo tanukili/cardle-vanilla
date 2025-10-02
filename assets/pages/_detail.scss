@@ -158,13 +158,13 @@ $shadow-expanded: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
 @include media-breakpoint-down(md){
-  .test > .container {
+  .faq-area > .container {
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
 }
-.comment1{
+.calltoactionarea{
   position: relative;
     overflow-x: clip;
     overflow-y: visible;
@@ -205,7 +205,7 @@ $shadow-expanded: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 }
   @include media-breakpoint-down(md) {
-    .comment1{
+    .calltoactionarea{
       padding: 64px 0;
     }
   }
