@@ -416,6 +416,7 @@ $theme-colors: (
   'primary-800': $primary-800,
   'primary-900': $primary-900,
   'secondary-0': $secondary-0,
+  'secondary-300': $secondary-300,
   'secondary-500': $secondary-500,
 
   'tag-success': $tag-success,
@@ -526,6 +527,8 @@ $spacers: (
   10: $spacer * 2.5,
   11: $spacer * 2.75,
   12: $spacer * 3,
+  13: $spacer * 3.25,
+  14: $spacer * 3.5,
   15: $spacer * 3.75,
   16: $spacer * 4,
   20: $spacer * 5,
@@ -1567,7 +1570,8 @@ $card-title-spacer-y: $spacer * 0.5 !default;
 $card-title-color: null !default;
 $card-subtitle-color: null !default;
 $card-border-width: var(--#{$prefix}border-width) !default;
-$card-border-color: var(--#{$prefix}border-color-translucent) !default;
+$card-border-color: var(--#{$prefix}border-color) !default; // custom
+// $card-border-color: var(--#{$prefix}border-color-translucent) !default;
 $card-border-radius: var(--#{$prefix}border-radius) !default;
 $card-box-shadow: null !default;
 $card-inner-border-radius: subtract($card-border-radius, $card-border-width) !default;
@@ -1576,7 +1580,8 @@ $card-cap-padding-x: $card-spacer-x !default;
 $card-cap-bg: rgba(var(--#{$prefix}body-color-rgb), 0.03) !default;
 $card-cap-color: null !default;
 $card-height: null !default;
-$card-color: null !default;
+$card-color: $gray-900 !default; // custom
+// $card-color: null !default;
 $card-bg: var(--#{$prefix}body-bg) !default;
 $card-img-overlay-padding: $spacer !default;
 $card-group-margin: $grid-gutter-width * 0.5 !default;
@@ -1786,13 +1791,16 @@ $alert-color-scale: 40% !default; // Deprecated in v5.2.0, to be removed in v6
 // Progress bars
 
 // scss-docs-start progress-variables
-$progress-height: 1rem !default;
+$progress-height: 0.5rem !default; // custom
+// $progress-height: 1rem !default;
 $progress-font-size: $font-size-base * 0.75 !default;
-$progress-bg: var(--#{$prefix}secondary-bg) !default;
+$progress-bg: $secondary-100 !default; // custom
+// $progress-bg: var(--#{$prefix}secondary-bg) !default;
 $progress-border-radius: var(--#{$prefix}border-radius) !default;
 $progress-box-shadow: var(--#{$prefix}box-shadow-inset) !default;
 $progress-bar-color: $white !default;
-$progress-bar-bg: $primary !default;
+$progress-bar-bg: $secondary !default; // custom
+// $progress-bar-bg: $primary !default;
 $progress-bar-animation-timing: 1s linear infinite !default;
 $progress-bar-transition: width 0.6s ease !default;
 // scss-docs-end progress-variables

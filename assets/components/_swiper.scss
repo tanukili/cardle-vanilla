@@ -1,0 +1,15 @@
+// scrollbar-primary 客製化滾動條
+.swiper-horizontal > .swiper-scrollbar,
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  &.scrollbar-primary {
+    width: 184px;
+    height: 8px;
+    position: unset;
+    display: flex;
+    margin-inline: auto;
+    background: $primary-0;
+    .swiper-scrollbar-drag {
+      background: $primary;
+    }
+  }
+}
