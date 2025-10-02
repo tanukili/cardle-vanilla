@@ -3,13 +3,785 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/assets/images/logo.svg" type="image/x-icon" />
     <title>Cardle</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- 導覽列 -->
     <%- include('./layout/header'); -%>
-    <h1>個人筆記儀表板</h1>
+    <main class="flex-grow-1 overflow-hidden">
+      <section class="text-center pt-20 pb-14 pt-lg-25 pb-lg-30" style="background-color: #fafafa">
+        <div class="container">
+          <h2 class="fs-xl text-gray-700 mb-4 fs-md-3xl">
+            哈囉！<span class="badge badge-lg badge-secondary fs-xl mx-2 lh-base lh-md-sm fs-md-3xl">Jennie</span>！
+          </h2>
+          <h1 class="fs-2xl text-gray-700 mb-13 fs-md-4xl mb-md-16">今天有任何靈感嗎？</h1>
+          <nav class="nav nav-underline justify-content-center mb-10">
+            <div class="nav-item d-flex" id="dashboard-nav-tab" role="tablist">
+              <button
+                class="nav-link mx-3 d-flex align-items-center active"
+                id="nav-add-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-add"
+                type="button"
+                role="tab"
+                aria-controls="nav-home"
+                aria-selected="true"
+              >
+                <span class="material-symbols-outlined me-4"> edit_square </span>
+                新增卡片
+              </button>
+              <button
+                class="nav-link mx-3 d-flex align-items-center"
+                id="nav-search-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-search"
+                type="button"
+                role="tab"
+                aria-controls="nav-profile"
+                aria-selected="false"
+              >
+                <span class="material-symbols-outlined me-4"> search </span>
+                搜尋卡片
+              </button>
+            </div>
+          </nav>
+          <form class="row">
+            <div class="tab-content mb-10 col-md-8 mx-md-auto">
+              <div
+                class="tab-pane fade show active"
+                id="nav-add"
+                role="tabpanel"
+                aria-labelledby="nav-add-tab"
+                tabindex="0"
+              >
+                <textarea
+                  class="form-control dashboard-textarea"
+                  id="addCardTextarea"
+                  placeholder="請輸入要新增卡片的內容"
+                ></textarea>
+              </div>
+              <div class="tab-pane fade" id="nav-search" role="tabpanel" aria-labelledby="nav-search-tab" tabindex="0">
+                <textarea
+                  class="form-control dashboard-textarea"
+                  id="searchCardTextarea"
+                  placeholder="請輸入要搜尋卡片的內容"
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-primary w-100 w-md-auto fs-md-xl py-md-4 px-md-6" type="submit">新增</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section class="pt-14 pb-6 pt-lg-20 pb-lg-10">
+        <div class="container">
+          <h2
+            class="fs-xl lh-base mb-8 pb-6 border-bottom border-gray-200 d-flex align-items-center fs-md-3xl lh-md-sm mb-md-10"
+          >
+            學習狀態分析
+            <a
+              class="lh-1 ms-2 ms-md-4"
+              data-bs-toggle="collapse"
+              href="#chartCollapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="chartCollapse"
+            >
+              <span class="material-symbols-outlined align-bottom fs-md-3xl"> keyboard_arrow_down </span>
+            </a>
+          </h2>
+        </div>
+        <div class="collapse show" id="chartCollapse">
+          <div class="container mb-lg-10">
+            <div class="row gx-6">
+              <!-- 圓餅圖 -->
+              <div class="pie-chart col-12 col-lg-6 col-xl-5 mb-8 mb-lg-0">
+                <div class="card bg-gray-0 border-primary-100 rounded-4 h-100">
+                  <div class="card-title p-4 mb-0 p-xl-6">
+                    <h3 class="fs-l lh-base fw-normal text-primary-900 fs-xl-xl">本月學習主題</h3>
+                  </div>
+                  <div
+                    class="card-body d-flex flex-column flex-sm-row justify-content-center align-items-center py-0 py-sm-4 py-xl-6"
+                  >
+                    <div class="pie-container pe-sm-3">
+                      <canvas id="themePie" class="p-3"></canvas>
+                    </div>
+                    <div class="d-sm-flex align-items-center pt-4 pt-sm-0 ps-sm-3">
+                      <ul
+                        class="list-unstyled mx-auto mb-2 px-3 d-flex flex-wrap flex-sm-column justify-content-between align-items-center py-1 align-items-sm-start ps-sm-2 pe-sm-0 mb-sm-0"
+                        style="max-width: 288px; min-width: 164px"
+                      >
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block bg-secondary-500 rounded-circle me-2"
+                              style="width: 8px; height: 8px"
+                            ></span
+                            >網頁切板: 70%
+                          </p>
+                        </li>
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block rounded-circle me-2"
+                              style="width: 8px; height: 8px; background-color: #ff9e69"
+                            ></span
+                            >JavaScrip: 20%
+                          </p>
+                        </li>
+                        <li class="w-50 px-2 py-1 py-sm-2 px-sm-0 w-sm-100">
+                          <p class="d-flex align-items-center fs-s text-gray-700">
+                            <span
+                              class="d-block rounded-circle me-2"
+                              style="width: 8px; height: 8px; background-color: #fed0a7"
+                            ></span
+                            >料理基礎: 10%
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 長條圖 -->
+              <div class="bar-chart col-12 col-lg-6 col-xl-7 mb-8 mb-md-10 mb-lg-0">
+                <div class="overflow-scroll scrollbar-none">
+                  <div class="card bg-gray-0 border-primary-100 rounded-4">
+                    <div class="card-title p-4 mb-0 p-xl-6">
+                      <h3 class="fs-l lh-base fw-normal text-primary-900 fs-xl-xl">學習時間 (分)</h3>
+                    </div>
+                    <div class="bar-container card-body d-flex flex-column p-xl-6">
+                      <canvas id="spendTimeBar"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10">學習進度追蹤</h2>
+        <div class="scrollbar-none w-100 overflow-scroll mb-8 mb-md-10">
+          <nav class="nav nav-pills nav-fill gap-6" style="width: max-content">
+            <a class="nav-link border border-primary active" aria-current="page" href="#">顯示全部</a>
+            <a class="nav-link border border-primary d-flex align-items-center" href="#"
+              ><span class="material-symbols-outlined me-3"> book </span>讀書筆記</a
+            >
+            <a class="nav-link border border-primary d-flex align-items-center" href="#"
+              ><span class="material-symbols-outlined me-3"> live_tv </span>線上課程</a
+            >
+            <a class="nav-link border border-primary d-flex align-items-center" aria-disabled="true"
+              ><span class="material-symbols-outlined me-3"> music_video </span>Podcast</a
+            >
+          </nav>
+        </div>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-6">
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> book </span>
+                  <span class="lh-base text-dark text-truncate">金魚都能懂的CSS 必學屬性：網頁設計必備寶典</span>
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="50"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar rounded-2 w-50"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">50%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> book </span>
+                  <span class="lh-base text-dark text-truncate"
+                    >看完這本就會懂！無痛攻克 JavaScript 面試必考觀念與技巧</span
+                  >
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="75"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar rounded-2 w-75"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">75%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> live_tv </span>
+                  <span class="lh-base text-dark text-truncate">TypeScript 中文基礎課程</span>
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="25"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar rounded-2 w-25"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">25%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> music_video </span>
+                  <span class="lh-base text-dark text-truncate"
+                    >EP39｜第一次當 QA 測試員就上手！軟體新人也能輕鬆入門測試工作</span
+                  >
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="100"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar rounded-2 w-100"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">100%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="progress-card card rounded-4 bg-gray-0 border-gray-200">
+              <div class="card-body p-lg-6">
+                <h3 class="fs-m fw-normal d-flex align-items-center mb-4 fs-xl-xl mb-lg-0 overflow-hidden">
+                  <span class="material-symbols-outlined text-gray-600 me-3"> music_video </span>
+                  <span class="lh-base text-dark text-truncate"
+                    >EP21｜QA 真的只是在找 Bug 嗎？帶你解鎖測試員的真實日常</span
+                  >
+                </h3>
+                <div class="d-flex align-items-center">
+                  <div
+                    class="progress flex-grow-1"
+                    role="progressbar"
+                    aria-label="learning-progress"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  >
+                    <div class="progress-bar rounded-2 w-0"></div>
+                  </div>
+                  <small class="progress-num text-gray-700 text-end">0%</small>
+                  <button class="btn btn-outline-primary d-flex align-items-center p-2 ms-4 d-lg-none" type="button">
+                    <span class="material-symbols-outlined"> edit_square </span>
+                  </button>
+                </div>
+                <button
+                  class="d-none btn btn-outline-primary d-lg-flex align-items-center p-2 px-xl-4 ms-4 ms-lg-0"
+                  type="button"
+                >
+                  <span class="material-symbols-outlined d-xl-none"> edit_square </span>
+                  <span class="d-none d-xl-inline">進度更新</span>
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10 mb-lg-20">常用卡片盒</h2>
+        <div id="card-box-swiper" class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-1.png"
+                    alt="CSS 基礎-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">CSS 基礎</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-2.png"
+                    alt="React 框架-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">React 框架</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-secondary-300">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-3.png"
+                    alt="料理基礎-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">料理基礎</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-success-bg">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-4.jpg"
+                    alt="認識自己-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">認識自己</h3>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card rounded-4 bg-gray-0 border-2 border-tag-orange-bg">
+                <div class="card-body p-xl-6">
+                  <img
+                    class="cover-img mb-4 rounded-1"
+                    src="/assets/images/dashboard/card-box-cover-5.jpg"
+                    alt="規劃與管理-封面"
+                  />
+                  <h3 class="fs-m lh-base tracking-2 text-center fs-lg-xl">規劃與管理</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-20">
+            <div class="swiper-scrollbar scrollbar-primary"></div>
+          </div>
+        </div>
+      </section>
+      <section class="container py-14 py-lg-20">
+        <h2 class="fs-xl mb-8 pb-6 border-bottom border-gray-200 fs-md-3xl lh-md-sm mb-md-10 mb-lg-20">最近新增卡片</h2>
+        <div id="current-cards-swiper" class="swiper overflow-visible">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
+                  <p>
+                    常見單位（px, %, rem）<br />px：固定像素<br />
+                    %：相對於父元素<br />
+                    rem：相對於 root font size<br />
+                    使用 rem 可以更靈活響應式。
+                  </p>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
+                  <p>實用建議</p>
+                  <ul class="mb-0">
+                    <li>響應式設計：建議優先使用 rem + % + vw/vh 的組合</li>
+                    <li>元件內縮放：用 em 可以讓文字隨父層等比縮放</li>
+                    <li>精準控制：設計系統中仍可用 px 做細節調整</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
+                  <p>
+                    和風醬汁：醬油 × 味醂 × 高湯<br />常見比例為：<br />1（醬油）：1（味醂）：2（高湯）
+                    <br />可用於燉煮、壽喜燒、烏龍麵湯底 味醂帶甜味並增加照面光澤
+                  </p>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
+                  <p>
+                    黃金比例：醬油 × 糖 × 米酒<br />
+                    適用於台式紅燒料理，常見比例為：1（醬油）：1（糖）：1（米酒）<br />
+                    醬油提鹹香<br />
+                    糖增加焦化風味<br />
+                    米酒去腥提味<br />
+                    👉 也可加入少許水稀釋，適用於紅燒肉、紅燒豆腐等。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
+                  <p>
+                    麻婆豆腐食譜（2-3人份）<br /><br />
+                    食材準備：<br />
+                  </p>
+                  <ul class="mb-0">
+                    <li>嫩豆腐：1盒（約300g，建議用棉豆腐或北豆腐）</li>
+                    <li>牛絞肉：100g（也可用豬絞肉代替） 蒜末：2瓣</li>
+                    <li>薑末：1小匙 蔥花：適量（分開蔥白與蔥綠）</li>
+                    <li>豆瓣醬：1.5 大匙（建議使用郫縣豆瓣醬，較為道地）</li>
+                    <li>醬油：1 大匙</li>
+                    <li>料酒：1 大匙</li>
+                    <li>水：200ml</li>
+                    <li>太白粉水：1大匙太白粉＋1大匙水混合</li>
+                    <li>花椒粉：1/2 小匙（或花椒油）</li>
+                    <li>辣椒粉或辣椒油：依個人口味添加</li>
+                    <li>香油：少許</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-orange lh-base mb-4">React</span>
+                  <p>props vs state<br />props 是由父元件傳入的資料<br />state 是元件內部的狀態，可被修改<br /></p>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
+                  <p>
+                    Flexbox（彈性盒子）<br /><code>display: flex;</code>
+                    是現代網頁常用的排版方式之一，能夠快速讓元素水平或垂直對齊。<br />
+                  </p>
+                  <pre class="mb-0 code-area"><code>.container {
+  display: flex;
+  justify-content: center; /* 主軸對齊 */
+  align-items: center; /* 交叉軸對齊 */
+}</code></pre>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">CSS 基礎</span>
+                  <p>
+                    Box Model（盒模型）<br />CSS 的每個元素都像一個盒子，由以下幾個部分構成（由內而外）：
+                    <code>[margin] [border] [padding] [content]</code><br />
+                  </p>
+                  <ul class="mb-0">
+                    <li>區塊說明 <code>content</code>元素實際內容，如文字、圖片等</li>
+                    <li><code>padding</code>內容與邊框之間的間距</li>
+                    <li><code>border</code>元素的邊框</li>
+                    <li><code>margin</code>元素與外部其他元素之間的距離</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-orange lh-base mb-4">React</span>
+                  <p>
+                    useState — 狀態管理入門 用來宣告與更新元件內的狀態 const [count, setCount] = useState(0)<br />setCount(count
+                    + 1)<br /><br />
+                    每次 setCount 呼叫後元件會重新渲染。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200 mb-4">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">認識自己</span>
+                  <p>《我得了不想上班的病》中提到的倦怠3類型：</p>
+                  <ol class="mb-0">
+                    <li>過勞</li>
+                    <li>社交疲憊</li>
+                    <li>無聊萎靡</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-success lh-base mb-4">認識自己</span>
+                  <p>
+                    過勞型倦怠：<br />
+                    容易出現在一直處與工作狀態、全職育兒的人的身上。過度努力、有責任感。
+                  </p>
+                  <br />
+                  <p>常見跡象：</p>
+                  <ol>
+                    <li>主客觀來看都很忙</li>
+                    <li>時間總是不夠</li>
+                    <li>跟不上的焦慮或內疚</li>
+                    <li>這陣子忙完就好</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="width: 300px">
+              <div class="card rounded-4 bg-gray-0 border-gray-200">
+                <div class="card-body p-xl-6">
+                  <span class="badge badge-secondary lh-base mb-4">料理基礎</span>
+                  <p>歌劇院蛋糕 Opera Cake</p>
+                  <ol class="mb-0">
+                    <li>
+                      杏仁海綿蛋糕 Joconde
+                      <ul>
+                        <li>杏仁粉 – 80g</li>
+                        <li>低筋麵粉 – 20g</li>
+                        <li>全蛋 – 2顆</li>
+                        <li>糖粉 – 50g</li>
+                        <li>蛋白 – 3顆</li>
+                        <li>砂糖 – 20g</li>
+                        <li>無鹽奶油 – 20g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      咖啡糖液 Coffee Syrup
+                      <ul>
+                        <li>即溶咖啡 – 5g</li>
+                        <li>砂糖 – 30g</li>
+                        <li>熱水 – 100g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      法式奶油霜 French Buttercream
+                      <ul>
+                        <li>無鹽奶油 – 120g</li>
+                        <li>蛋黃 – 3顆</li>
+                        <li>砂糖 – 60g</li>
+                        <li>水 – 25g</li>
+                      </ul>
+                    </li>
+                    <li>
+                      甘納許 Ganache
+                      <ul>
+                        <li>黑巧克力 – 75g</li>
+                        <li>鮮奶油 – 75g</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 mt-md-10">
+            <div class="swiper-scrollbar scrollbar-primary"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- 頁尾 -->
+    <%- include('./layout/footer'); -%>
 
     <script type="module" src="../../main.js"></script>
+    <script type="module">
+      import Swiper from 'swiper';
+      import 'swiper/css';
+      import 'swiper/css/scrollbar';
+      import { Scrollbar } from 'swiper/modules';
+
+      // Swiper
+      const swiper = new Swiper('#card-box-swiper', {
+        modules: [Scrollbar],
+        spaceBetween: 24,
+        slidesPerView: 'auto',
+        slidesOffsetBefore: 0, // 和容器 padding 搭配，避免開頭/結尾多出空白
+        slidesOffsetAfter: 0,
+        watchOverflow: true, // 總寬不足時不產生可滑動空白
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        },
+      });
+
+      const cardsSwiper = new Swiper('#current-cards-swiper', {
+        modules: [Scrollbar],
+        spaceBetween: 16,
+        slidesPerView: 'auto',
+        slidesOffsetBefore: 0, // 和容器 padding 搭配，避免開頭/結尾多出空白
+        slidesOffsetAfter: 0,
+        watchOverflow: true, // 總寬不足時不產生可滑動空白
+        centerInsufficientSlides: true,
+        scrollbar: {
+          el: '.swiper-scrollbar',
+          draggable: true,
+        },
+      });
+
+      import { Chart } from 'chart.js/auto';
+
+      const themeData = {
+        labels: ['網頁切板', '料理基礎', 'JavaScrip'],
+        datasets: [
+          {
+            label: '本週占比（%）',
+            data: [70, 20, 10],
+            backgroundColor: ['#6190D5', '#FF9E69', '#FED0A7'],
+            borderWidth: 0,
+          },
+        ],
+      };
+
+      const themePie = {
+        type: 'pie',
+        data: themeData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+      };
+
+      const ctx = document.getElementById('themePie');
+      new Chart(ctx, themePie);
+
+      // const labels = Utils.months({ count: 12 });
+      const spendTimeData = {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+          {
+            label: '學習時間',
+            data: [55, 25, 80, 45, 120, 180, 75, 90, 60, 20, 45, 100],
+            backgroundColor: '#6190D5',
+            borderRadius: 16,
+            borderSkipped: false,
+            barThickness: 16,
+          },
+        ],
+      };
+
+      const customTicks = {
+        id: 'customTicks',
+        afterDraw(chart) {
+          const { ctx, chartArea, scales } = chart;
+          const yAxis = scales.y;
+          ctx.save();
+          ctx.textAlign = 'left';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = '#2B2B2B';
+          ctx.font = '12px sans-serif';
+
+          yAxis.ticks.forEach((tick, i) => {
+            const y = yAxis.getPixelForTick(i);
+            ctx.fillText(tick.label, yAxis.left, y);
+          });
+          ctx.restore();
+        },
+      };
+
+      const spendTimeBar = {
+        type: 'bar',
+        data: spendTimeData,
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }, // 隱藏內建圖例
+            tooltip: {
+              callbacks: { label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y} 分` },
+            },
+          },
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+              border: {
+                display: false,
+              },
+              ticks: {
+                color: '#2B2B2B',
+                padding: 8,
+              },
+            },
+            y: {
+              suggestedMin: 0,
+              suggestedMax: 200,
+              grid: {
+                color: '#F3D7D7',
+                drawBorder: false, // 不畫 y 軸邊框線
+                drawTicks: false,
+              },
+              border: {
+                display: false,
+                dash: [7, 7],
+              },
+              ticks: {
+                color: '#FCFCFC',
+                padding: 8,
+                stepSize: 50,
+                precision: 0,
+              },
+            },
+          },
+        },
+        plugins: [customTicks],
+      };
+
+      const timeCtx = document.getElementById('spendTimeBar');
+      new Chart(timeCtx, spendTimeBar);
+    </script>
   </body>
 </html>
