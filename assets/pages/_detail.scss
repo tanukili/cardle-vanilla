@@ -1,0 +1,215 @@
+.plan-swiper {
+  .swiper-slide {
+    width: 280px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .swiper-slide {
+      width: 352px;
+    }
+  }
+}
+$smooth-bezier: cubic-bezier(0.2, 0.8, 0.4, 1);
+$duration: 0.3s; /* 稍微增加到 0.4s 增加「緩慢」感 */
+$bg-expanded: #EBF1FA;
+$shadow-default: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-expanded: 0 4px 12px rgba(0, 0, 0, 0.15);
+.faq-item {
+  /* 預設狀態 (未展開) - 白色背景 */
+  background-color: #ffffff; 
+  border-radius: 16px;
+  box-shadow: $shadow-default;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  /* 將過渡時間延長至 0.3s，並使用平滑曲線 */
+  transition: background-color $duration $smooth-bezier, 
+              box-shadow $duration $smooth-bezier, 
+              transform $duration $smooth-bezier;
+  transform: scale(1); /* 確保初始狀態 */
+}
+
+/* 展開狀態 - 藍色背景 */
+.faq-item.expanded {
+    background-color: $bg-expanded;
+    box-shadow: $shadow-expanded;
+    transform: scale(1.005); 
+    color: #000;
+}
+/* Hover 效果 */
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    transform: scale(1.002);
+}
+
+.collapsing {
+  /* 讓內容高度使用我們自定義的曲線和時間 */
+  transition: height $duration $smooth-bezier !important;
+  transform: translateZ(0);
+  will-change: height;
+}
+
+/* 確保內容溢出隱藏 */
+.collapse:not(.show), .collapsing {
+    overflow: hidden !important; 
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #1A1A1A;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.3s ease; 
+}
+
+.faq-icon {
+  transition: transform 0.2s ease, color 0.2s ease;
+  font-size: 1.5rem;
+}
+
+/* 展開時圖標顏色和旋轉 */
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(90deg);
+}
+
+.faq-answer {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: opacity $duration $smooth-bezier;
+  transform: translateZ(0);
+  will-change: opacity;
+}
+/* 內文段落樣式調整 */
+.faq-answer p {
+  /* 將所有垂直間距都設定為 padding，方便控制收合 */
+  padding-top: 0.5rem;
+  padding-bottom: 0;
+  margin: 0;
+}
+.faq-answer p:first-child {
+  /* 確保第一個段落有頂部間距 */
+  padding-top: 1rem; 
+}
+
+/* 確保答案內最後一個段落沒有底部邊距，讓卡片收尾更乾淨 */
+.faq-answer p:last-child {
+  /* 展開時底部間距 */
+  padding-bottom: 1rem; 
+}
+
+/* 隱藏狀態下的額外處理 (內容淡出) */
+.collapse:not(.show) .faq-answer {
+  opacity: 0;
+      /* 關鍵修正：讓內容在整個 0.3s 期間淡出，與高度動畫同步，消除突兀感 */
+  transition: opacity $duration $smooth-bezier 0s; 
+}
+#faqAccordion .collapse:not(.show) .faq-answer p {
+  /* 確保內容的填充也消失 */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+/* 背景區塊 */
+.background-blocks {
+  position: relative;
+  // min-height: 100vh;
+  overflow: hidden;
+  // padding: 40px;
+}
+
+/* 色塊基本設定 */
+.colorblocks {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none; /* 不擋點擊 */
+  max-width: 100%;      /* 保證不會超過容器 */
+  height: auto;
+}
+/* 右上 */
+.top-right {
+  top: 20px;
+  right: 0;
+  width: 372px;
+}
+
+/* 左下 */
+.bottom-left {
+  top: 257px;
+  left: 0;
+  width: 302px;
+}
+
+/* 平板以下 (縮小一點) */
+@media (max-width: 768px) {
+  .top-right {
+    width: 270px;
+    right: -77px;
+    top:13px;
+  }
+  .bottom-left {
+    width: 214px;
+    bottom: 56px;
+    left: -109px;
+  }
+}
+.title{
+  text-align: left;
+}
+@include media-breakpoint-down(md){
+  .faq-area > .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.calltoactionarea{
+  position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
+    z-index: 2;
+    padding: 100px 0;
+    background-color: #EAFFE1;
+     &::before {
+      bottom: -32px;
+      aspect-ratio: auto;
+      height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+      content: '';
+      position: absolute;
+      width: clamp(23.4375rem, 0rem + 100vw, 120rem);
+      background: url('/assets/images/detail/wave-top1.svg') no-repeat center / cover;
+      z-index: -1;
+      top: -65px;
+    }
+    @include media-breakpoint-down(md) {
+      &::before {
+        top: -20px;
+      }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -42px;
+    left: 0;
+    right: 0;
+    aspect-ratio: auto;
+    height: clamp(3rem, 1.21rem + 7.6375vw, 10.375rem);
+    background: url('/assets/images/detail/wave-bottom1.svg') no-repeat center / contain;
+    z-index: -1;
+  }
+      @include media-breakpoint-down(md) {
+      &::after {
+        bottom: -30px;
+      }
+    }
+}
+  @include media-breakpoint-down(md) {
+    .calltoactionarea{
+      padding: 64px 0;
+    }
+  }
+// *,*::before,*::after{
+//   outline: 2px solid green;
+// }
+// 
