@@ -3,12 +3,500 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Cardle</title>
-    <script type="module" crossorigin src="/cardle-vanilla/assets/main-DKZymDTv.js"></script>
-    <link rel="stylesheet" crossorigin href="/cardle-vanilla/assets/main-BG2iujUJ.css">
+    <script type="module" crossorigin src="/cardle-vanilla/assets/subscription\detail-msH3ge9M.js"></script>
+    <link rel="modulepreload" crossorigin href="/cardle-vanilla/assets/main-CB_j_al5.js">
+    <link rel="modulepreload" crossorigin href="/cardle-vanilla/assets/swiper-core-Clt7VEzq.js">
+    <link rel="modulepreload" crossorigin href="/cardle-vanilla/assets/scrollbar-CFL_0F85.js">
+    <link rel="modulepreload" crossorigin href="/cardle-vanilla/assets/autoplay-C1M5X4PZ.js">
+    <link rel="modulepreload" crossorigin href="/cardle-vanilla/assets/swiper-bundle-P5lQwNgq.js">
+    <link rel="stylesheet" crossorigin href="/cardle-vanilla/assets/main-BZhSfuph.css">
+    <link rel="stylesheet" crossorigin href="/cardle-vanilla/assets/swiper-bundle-BH4JZYC6.css">
   </head>
   <body>
-    <h1>訂閱方案</h1>
-
+    <nav class="header-navbar navbar navbar-expand-md bg-gray-0 border-bottom border-primary-100 pe-0">
+  <div class="container">
+    <a href="/cardle-vanilla/index.html">
+      <h2 class="logo">Cardle</h2>
+    </a>
+    <button
+      class="navbar-toggler border-0 ms-auto"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#headerNavbar"
+      aria-controls="headerNavbar"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas flex-row align-items-center justify-content-end">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item user-none">
+          <a class="nav-link rounded-2 py-2 px-4 active" aria-current="page" href="/cardle-vanilla/index.html">首頁</a>
+        </li>
+        <li class="nav-item user-none">
+          <a class="nav-link rounded-2 py-2 px-4" href="/cardle-vanilla/features.html">商品介紹</a>
+        </li>
+        <li class="nav-item user-none">
+          <a class="nav-link rounded-2 py-2 px-4" href="/cardle-vanilla/subscription/detail.html">訂閱方案</a>
+        </li>
+        <li class="login-none user-none">
+          <a class="btn btn-outline-primary" href="/cardle-vanilla/login.html">登入</a>
+        </li>
+        <li class="login-none user-none">
+          <a class="btn btn-primary" href="/cardle-vanilla/sing-up.html">免費註冊</a>
+        </li>
+        <!-- 登入後 dropdown -->
+        <li class="login-show">
+          <div class="dropdown">
+            <button
+              class="nav-link py-1 px-4 rounded-2 d-flex align-items-center dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="header-avatar rounded-circle" src="/cardle-vanilla/assets/user-CWitcbLv.png" alt="個人頭像" />
+              <span class="mx-2">Jennie</span>
+              <span class="material-symbols-outlined"> keyboard_arrow_down </span>
+            </button>
+            <ul class="dropdown-shadow dropdown-menu border-primary-400 bg-gray-0">
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/dashboard.html">筆記儀表板</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/booklists.html">我的書單</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/account.html">會員中心</a>
+              </li>
+              <li><a class="dropdown-item rounded-2" id="logout-btn" href="#">登出</a></li>
+            </ul>
+          </div>
+        </li>
+        <!-- 會員儀錶板 dropdown -->
+        <li class="user-show">
+          <div class="dropdown">
+            <button
+              class="nav-link py-1 px-4 rounded-2 d-flex align-items-center dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img class="header-avatar rounded-circle" src="/cardle-vanilla/assets/user-CWitcbLv.png" alt="個人頭像" />
+              <span class="mx-2">Jennie</span>
+              <span class="material-symbols-outlined"> keyboard_arrow_down </span>
+            </button>
+            <ul
+              class="dropdown-shadow dropdown-menu border-primary-400 bg-gray-0 mt-4 flex-column"
+              style="height: calc(100vh - 73px)"
+            >
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/booklists.html">我的書單</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/dashboard.html">卡片盒一覽</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/dashboard.html">關聯地圖</a>
+              </li>
+              <li class="border-bottom border-gray-200 mb-2">
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/dashboard.html">我的草稿</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/dashboard.html">個人首頁</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/account.html">會員中心</a>
+              </li>
+              <li>
+                <a class="dropdown-item rounded-2 mb-2" href="/cardle-vanilla/user/account/plan-upgrade.html"
+                  >升級方案</a
+                >
+              </li>
+              <li class="mt-auto border-top border-gray-200">
+                <a class="dropdown-item rounded-2 mt-2" id="logout-btn" href="#">登出</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- 登入後 mobile offcanvas 按鈕 -->
+    <button
+      class="login-show user-show both-state-md-none navbar-toggler p-0 border-0 rounded-circle focus-ring ms-4"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#userNavbar"
+      aria-controls="userNavbar"
+      aria-label="Toggle navigation"
+    >
+      <img class="header-avatar rounded-circle" src="/cardle-vanilla/assets/user-CWitcbLv.png" alt="個人頭像" />
+    </button>
+  </div>
+</nav>
+<!-- 漢堡選單 mobile offcanvas -->
+<div
+  class="header-offcanvas offcanvas offcanvas-end bg-gray-0 d-md-none"
+  tabindex="-1"
+  id="headerNavbar"
+  data-bs-scroll="true"
+  data-bs-backdrop="true"
+  aria-labelledby="headerNavbarLabel"
+>
+  <div class="offcanvas-body p-2 border border-primary-400">
+    <ul class="navbar-nav me-auto mb-6">
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4 active" aria-current="page" href="/cardle-vanilla/index.html">首頁</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4" href="/cardle-vanilla/features.html">商品介紹</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link rounded-2 py-3 px-4" href="/cardle-vanilla/subscription/detail.html">訂閱方案</a>
+      </li>
+    </ul>
+    <span class="login-none user-none border-bottom border-gray-200 mb-6 mx-2_5 d-block"></span>
+    <div class="login-none user-none d-flex flex-column">
+      <a class="btn btn-outline-primary text-start py-3 mb-2" href="/cardle-vanilla/login.html">登入</a>
+      <a class="btn btn-primary text-start py-3" href="/cardle-vanilla/sing-up.html">免費註冊</a>
+    </div>
+  </div>
+</div>
+<!-- 登入後 mobile offcanvas -->
+<div
+  class="header-offcanvas offcanvas offcanvas-end bg-gray-0 d-md-none"
+  tabindex="-1"
+  id="userNavbar"
+  data-bs-scroll="true"
+  data-bs-backdrop="true"
+  aria-labelledby="userNavbarLabel"
+>
+  <div class="offcanvas-body p-2 border border-primary-400">
+    <ul class="navbar-nav me-auto mb-6">
+      <li class="nav-item">
+        <a class="nav-link text-primary rounded-2 py-3 px-4 mb-2" href="/cardle-vanilla/user/dashboard.html"
+          >筆記儀表板</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary rounded-2 py-3 px-4 mb-2" href="/cardle-vanilla/user/booklists.html"
+          >我的書單</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-primary rounded-2 py-3 px-4 mb-2" href="/cardle-vanilla/user/account.html">會員中心</a>
+      </li>
+      <li class="nav-item"><a class="nav-link text-primary rounded-2 py-3 px-4" id="logout-btn" href="#">登出</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  const header = document.querySelector('.header-navbar');
+  const headerOffcanvas = document.querySelector('.header-offcanvas');
+
+  const toggleHeaderPosition = () => {
+    if (window.scrollY > 0) {
+      header.classList.add('position-fixed');
+    } else {
+      header.classList.remove('position-fixed');
+    }
+  };
+
+  window.addEventListener('scroll', toggleHeaderPosition);
+
+  const updateHeaderState = () => {
+    const isLogin = Boolean(localStorage.getItem('isLogin'));
+    const path = window.location.pathname;
+
+    if (path.includes('user')) {
+      header.classList.add('user-state');
+      headerOffcanvas.classList.add('user-state');
+    } else {
+      if (isLogin) {
+        header.classList.add('login-state');
+        headerOffcanvas.classList.add('login-state');
+      }
+    }
+  };
+  // 初始化
+  updateHeaderState();
+
+  const logoutBtns = document.querySelectorAll('#logout-btn');
+
+  logoutBtns.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      localStorage.removeItem('isLogin');
+      window.location.href = '/cardle-vanilla/index.html';
+      updateHeaderState();
+    });
+  });
+</script>
+    <section class="bg-gray-98 py-md-25 py-20">
+      <div class="container text-center">
+        <h1 class="fs-md-5xl fs-4 pb-6 border-bottom mb-6">選擇適合你的使用方案</h1>
+        <div class="mb-6">
+          <span class="fs-md-2xl fs-s badge text-tag-secondary bg-tag-secondary-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 簡單起步</span>
+          <span class="fs-md-2xl fs-s badge text-tag-orange bg-tag-orange-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 彈性升級</span>
+          <span class="fs-md-2xl fs-s badge text-tag-success bg-tag-success-bg py-md-2 px-md-4 py-1 px-2 rounded-1"># 讓筆記陪你成長</span>
+        </div>
+        <p class="fs-md-2xl fs-l fw-bold mb-md-20 mb-10 d-flex flex-column flex-md-row justify-content-center align-items-center text-center" >無論你是學生還是專業人士，<br class="d-md-none">我們都有適合你的方案。</p>
+      </div>
+        <div class="plan-swiper swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Free</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">免費方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 0</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">標籤分類</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">立即註冊</a>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-2 border-secondary rounded-4 shadow d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Pro</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">標籤分類</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">視覺化關聯地圖</span>
+                    </li>
+                    <li>
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">進度追蹤與提醒</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-secondary py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案（推薦）</a>
+              </div>
+            </div>
+              <!-- Slide 3 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Pro</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">標籤分類</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">視覺化關聯地圖</span>
+                    </li>
+                    <li>
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">進度追蹤與提醒</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案</a>
+              </div>           
+            </div>            
+          </div>
+        </div> 
+    </section>
+    <section class="faq py-md-25 py-20">
+      <div class="container">
+        <h2 class="fs-md-5xl fs-4 pb-6 border-bottom text-center">FAQ</h2>
+      </div> 
+      <div class="faq-area">
+        <div class="container">
+          <div class="background-blocks">
+              <img class="colorblocks top-right"  src="data:image/svg+xml,%3csvg%20width='372'%20height='300'%20viewBox='0%200%20372%20300'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M196.216%200.0212451C238.879%200.984344%20263.596%2036.3213%20292.468%2062.8311C326.008%2093.6265%20371.709%20119.598%20371.994%20161.415C372.359%20214.88%20356.084%20287.868%20294.079%20298.98C231.661%20310.167%20210.643%20226.19%20154.655%20200.366C106.239%20178.035%2021.9704%20208.488%203.07265%20164.758C-15.5549%20121.652%2055.0305%2090.9567%2093.278%2058.3345C123.856%2032.2541%20152.745%20-0.960086%20196.216%200.0212451Z'%20fill='%23F5BD8A'%20fill-opacity='0.4'/%3e%3c/svg%3e" alt="">
+              <img class="colorblocks bottom-left" src="data:image/svg+xml,%3csvg%20width='302'%20height='240'%20viewBox='0%200%20302%20240'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M149.709%200.754439C184.396%206.2231%20194.297%2054.5371%20218.197%2083.7815C247.275%20119.362%20311.658%20138.529%20300.774%20185.599C289.823%20232.955%20226.284%20217.559%20184.612%20229.019C159.421%20235.947%20136.453%20244.003%20111.126%20237.754C70.9008%20227.829%2017.8294%20228.417%203.49516%20184.334C-11.3121%20138.796%2023.9549%2093.5961%2052.5694%2057.6691C78.3385%2025.3147%20111.785%20-5.22459%20149.709%200.754439Z'%20fill='%238EABDF'%20fill-opacity='0.4'/%3e%3c/svg%3e" alt="">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-11  py-md-20 py-10">
+                  <div class="accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item mb-6 py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center text-gray-900 fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq1" 
+                              aria-expanded="false" 
+                              aria-controls="faq1">
+                        <strong class="title">我想進一步了解方案，可以說明方案的詳細內容嗎？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq1" class="collapse faq-answer mt-2 accordion-body" data-bs-parent="#faqAccordion">
+                        <p class="mb-1">月繳方案：可以隨時取消，下個月不再自動續費。</p>
+                        <p class="mb-0">年繳方案：購買後會持續提供一年服務，中途不提供退款。</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item mb-6 py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq2" 
+                              aria-expanded="false" 
+                              aria-controls="faq2">
+                        <strong class="title">我可以隨時變更方案嗎？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq2" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">可以。您可以隨時升級或降級方案，新的方案會在下個週期生效。</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item py-6 mb-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq3" 
+                              aria-expanded="false" 
+                              aria-controls="faq3">
+                        <strong class="title">什麼方案適合我？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq3" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">目前支援信用卡付款（Visa、Mastercard、JCB），以及部分電子支付。</p>
+                      </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq4" 
+                              aria-expanded="false" 
+                              aria-controls="faq3">
+                        <strong class="title">卡片數量與書單數量的上限分別是多少？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq4" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">目前支援信用卡付款（Visa、Mastercard、JCB），以及部分電子支付。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+            </div>
+        </div> 
+      </div>
+    </section>
+    <section class="calltoactionarea">
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
+      <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
+        現在就開始你的學習旅程，<br class="d-lg-none">打造你的知識網絡！
+      </h3>
+          <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
+            立即開始
+          </a>
+        </div>
+    </section>
+    <footer class="bg-gray-0 py-16">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-md-center mb-8">
+      <!-- 標題 -->
+      <div class="text-center text-md-start mb-8 mb-md-0">
+        <a href="/cardle-vanilla/index.html" class="mb-4 mb-md-2">
+          <img src="/cardle-vanilla/assets/logo-with-text-C27zNbBk.svg" alt="logo" />
+        </a>
+        <p class="text-primary fw-bold fs-s">把靈感放進卡片盒，慢慢長成知識的森林。</p>
+      </div>
+      <!-- 導覽連結 -->
+      <ul class="nav nav-pills flex-column flex-md-row align-items-center gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="/cardle-vanilla/index.html">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cardle-vanilla/features.html">產品介紹</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/cardle-vanilla/subscription/detail.html">訂閱方案</a>
+        </li>
+      </ul>
+    </div>
+    <!-- 社群連結, copyright -->
+    <div class="d-flex flex-column flex-md-row justify-content-md-between align-items-center gap-6">
+      <ul class="community-list list-unstyled d-flex gap-8 mb-0">
+        <li>
+          <a href="#" class="community-link"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.9993%202.71973C8.66602%202.71973%202.66602%208.70639%202.66602%2016.0797C2.66602%2022.7464%207.54601%2028.2797%2013.9193%2029.2797V19.9464H10.5327V16.0797H13.9193V13.1331C13.9193%209.78639%2015.906%207.94639%2018.9594%207.94639C20.4127%207.94639%2021.9327%208.19973%2021.9327%208.19973V11.4931H20.2527C18.5993%2011.4931%2018.0793%2012.5197%2018.0793%2013.5731V16.0797H21.786L21.186%2019.9464H18.0793V29.2797C21.2213%2028.7835%2024.0823%2027.1804%2026.1459%2024.7598C28.2095%2022.3392%2029.3398%2019.2606%2029.3327%2016.0797C29.3327%208.70639%2023.3327%202.71973%2015.9993%202.71973Z'%20fill='%23555555'/%3e%3c/svg%3e" alt="facebook" /></a>
+        </li>
+        <li>
+          <a href="#" class="community-link"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M17.3708%202.66675C18.8708%202.67075%2019.6321%202.67875%2020.2894%202.69741L20.5481%202.70675C20.8468%202.71741%2021.1414%202.73075%2021.4974%202.74675C22.9161%202.81341%2023.8841%203.03741%2024.7334%203.36675C25.6134%203.70541%2026.3548%204.16408%2027.0961%204.90408C27.7744%205.57039%2028.299%206.37671%2028.6334%207.26675C28.9628%208.11608%2029.1868%209.08408%2029.2534%2010.5041C29.2694%2010.8587%2029.2828%2011.1534%2029.2934%2011.4534L29.3014%2011.7121C29.3214%2012.3681%2029.3294%2013.1294%2029.3321%2014.6294L29.3334%2015.6241V17.3707C29.3367%2018.3433%2029.3265%2019.3158%2029.3028%2020.2881L29.2948%2020.5467C29.2841%2020.8467%2029.2708%2021.1414%2029.2548%2021.4961C29.1881%2022.9161%2028.9614%2023.8827%2028.6334%2024.7334C28.299%2025.6235%2027.7744%2026.4298%2027.0961%2027.0961C26.4298%2027.7743%2025.6235%2028.299%2024.7334%2028.6334C23.8841%2028.9627%2022.9161%2029.1868%2021.4974%2029.2534L20.5481%2029.2934L20.2894%2029.3014C19.6321%2029.3201%2018.8708%2029.3294%2017.3708%2029.3321L16.3761%2029.3334H14.6308C13.6578%2029.3368%2012.6848%2029.3266%2011.7121%2029.3027L11.4534%2029.2948C11.1369%2029.2828%2010.8205%2029.269%2010.5041%2029.2534C9.08544%2029.1868%208.11744%2028.9627%207.26677%2028.6334C6.37721%2028.2988%205.57136%2027.7742%204.90544%2027.0961C4.2267%2026.4299%203.70159%2025.6236%203.36677%2024.7334C3.03744%2023.8841%202.81344%2022.9161%202.74677%2021.4961L2.70677%2020.5467L2.70011%2020.2881C2.67553%2019.3158%202.66442%2018.3433%202.66677%2017.3707V14.6294C2.66308%2013.6569%202.67286%2012.6843%202.69611%2011.7121L2.70544%2011.4534C2.71611%2011.1534%202.72944%2010.8587%202.74544%2010.5041C2.81211%209.08408%203.03611%208.11741%203.36544%207.26675C3.70103%206.37635%204.22707%205.57%204.90677%204.90408C5.57231%204.22615%206.37769%203.70151%207.26677%203.36675C8.11744%203.03741%209.08411%202.81341%2010.5041%202.74675C10.8588%202.73075%2011.1548%202.71741%2011.4534%202.70675L11.7121%202.69875C12.6844%202.67506%2013.6569%202.66484%2014.6294%202.66808L17.3708%202.66675ZM16.0001%209.33342C14.232%209.33342%2012.5363%2010.0358%2011.2861%2011.286C10.0358%2012.5363%209.33344%2014.232%209.33344%2016.0001C9.33344%2017.7682%2010.0358%2019.4639%2011.2861%2020.7141C12.5363%2021.9644%2014.232%2022.6667%2016.0001%2022.6667C17.7682%2022.6667%2019.4639%2021.9644%2020.7142%2020.7141C21.9644%2019.4639%2022.6668%2017.7682%2022.6668%2016.0001C22.6668%2014.232%2021.9644%2012.5363%2020.7142%2011.286C19.4639%2010.0358%2017.7682%209.33342%2016.0001%209.33342ZM16.0001%2012.0001C16.5254%2012%2017.0456%2012.1034%2017.5309%2012.3043C18.0162%2012.5052%2018.4572%2012.7998%2018.8287%2013.1712C19.2002%2013.5426%2019.4949%2013.9835%2019.696%2014.4687C19.8971%2014.954%2020.0007%2015.4741%2020.0008%2015.9994C20.0009%2016.5247%2019.8975%2017.0449%2019.6965%2017.5302C19.4956%2018.0155%2019.201%2018.4565%2018.8297%2018.828C18.4583%2019.1995%2018.0174%2019.4942%2017.5321%2019.6953C17.0469%2019.8964%2016.5267%2020%2016.0014%2020.0001C14.9406%2020.0001%2013.9232%2019.5787%2013.173%2018.8285C12.4229%2018.0784%2012.0014%2017.0609%2012.0014%2016.0001C12.0014%2014.9392%2012.4229%2013.9218%2013.173%2013.1717C13.9232%2012.4215%2014.9406%2012.0001%2016.0014%2012.0001M23.0014%207.33342C22.5594%207.33342%2022.1355%207.50901%2021.8229%207.82157C21.5104%208.13413%2021.3348%208.55805%2021.3348%209.00008C21.3348%209.44211%2021.5104%209.86603%2021.8229%2010.1786C22.1355%2010.4912%2022.5594%2010.6667%2023.0014%2010.6667C23.4435%2010.6667%2023.8674%2010.4912%2024.18%2010.1786C24.4925%209.86603%2024.6681%209.44211%2024.6681%209.00008C24.6681%208.55805%2024.4925%208.13413%2024.18%207.82157C23.8674%207.50901%2023.4435%207.33342%2023.0014%207.33342Z'%20fill='%23555555'/%3e%3c/svg%3e" alt="Instagram" /></a>
+        </li>
+        <li>
+          <a href="#" class="community-link"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M3.16467%203H10.8217L17.6358%2012.7457L25.815%203H28.2612L18.5675%2014.0803L29%2029H21.3473L14.2298%2018.8232L5.444%2029H3L13.2982%2017.4907L3.16467%203Z'%20fill='%23555555'/%3e%3c/svg%3e" alt="twitter" /></a>
+        </li>
+        <li>
+          <a href="#" class="community-link"><img src="data:image/svg+xml,%3csvg%20width='32'%20height='32'%20viewBox='0%200%2032%2032'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_13053_24675)'%3e%3cpath%20d='M26.667%205.33325H5.33366C3.86699%205.33325%202.68033%206.53325%202.68033%207.99992L2.66699%2023.9999C2.66699%2025.4666%203.86699%2026.6666%205.33366%2026.6666H26.667C28.1337%2026.6666%2029.3337%2025.4666%2029.3337%2023.9999V7.99992C29.3337%206.53325%2028.1337%205.33325%2026.667%205.33325ZM26.667%2010.6666L16.0003%2017.3333L5.33366%2010.6666V7.99992L16.0003%2014.6666L26.667%207.99992V10.6666Z'%20fill='%23555555'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_13053_24675'%3e%3crect%20width='32'%20height='32'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="email" /></a>
+        </li>
+      </ul>
+      <p class="text-gray-500">©2025 Cardle All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
   </body>
 </html>

@@ -1,0 +1,1 @@
+import"./main-CB_j_al5.js";import"./swiper-bundle-P5lQwNgq.js";import{S as e}from"./swiper-core-Clt7VEzq.js";import"./scrollbar-CFL_0F85.js";import"./autoplay-C1M5X4PZ.js";new e(".users-swiper",{slidesPerView:"auto",spaceBetween:24});
