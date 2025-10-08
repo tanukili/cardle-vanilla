@@ -71,7 +71,7 @@
     right: clamp(-280px, 46px - 26.76vw, -100px);
 
     /* 垂直位置 */
-    top: clamp(360px, 3.38px + 16.9vw, 860px);
+    bottom: clamp(10.625rem, 14rem + -9.375vw, 8.1875rem);
 
     /* 大小隨螢幕縮放 */
     width: clamp(17rem, 8.247rem + 37.3463vw, 53.0625rem);
@@ -99,6 +99,10 @@
     }
   }
   @include media-breakpoint-up(lg) {
+    &::before {
+      /* 垂直位置 */
+      top: clamp(360px, 3.38px + 16.9vw, 860px);
+    }
     &::after {
       bottom: -52px;
     }
