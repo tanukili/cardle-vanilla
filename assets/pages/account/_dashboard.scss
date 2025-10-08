@@ -1,0 +1,151 @@
+.dashboard-textarea {
+  resize: none;
+  height: 300px;
+  box-shadow:
+    0px 2px 5px 0px rgba($gray-700, 0.12),
+    0px 8px 8px 0px rgba($gray-700, 0.04),
+    0px 19px 11px 0px rgba($gray-700, 0.06);
+  background:
+    linear-gradient($gray-0, $gray-0) padding-box,
+    linear-gradient(90deg, #eb5858 0%, #6863f7 100%) border-box;
+  --bs-border-color: transparent;
+  position: relative;
+  &::placeholder {
+    color: $gray-500;
+  }
+  &:focus {
+    border-color: transparent;
+    box-shadow:
+      0 0 8px 0 rgba(#eb5858, 0.2),
+      0 0 8px 0 rgba(#6863f7, 0.2),
+      0px 2px 5px 0px rgba($gray-700, 0.12),
+      0px 8px 8px 0px rgba($gray-700, 0.04),
+      0px 19px 11px 0px rgba($gray-700, 0.06);
+  }
+  @include media-breakpoint-up(md) {
+    height: 240px;
+  }
+}
+
+a[href='#chartCollapse'] {
+  transform: rotate(-180deg);
+  transition: transform 0.3s ease-in-out;
+  &.collapsed {
+    transform: rotate(0deg);
+  }
+}
+
+.pie-chart {
+  > * {
+    @include media-breakpoint-up(xl) {
+      margin-right: -52px;
+    }
+  }
+  .pie-container {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+.bar-chart {
+  .overflow-scroll {
+    margin-inline: -12px;
+    @include media-breakpoint-up(sm) {
+      margin-inline: 0;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: 52px;
+    }
+    .card {
+      margin-inline: 12px;
+      @include media-breakpoint-up(sm) {
+        margin-inline: 0;
+      }
+    }
+  }
+
+  .card {
+    width: 662px;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      margin-left: 52px;
+    }
+  }
+  canvas {
+    width: 630px;
+    // max-width: 646px;
+    max-height: 211px;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
+    }
+    @include media-breakpoint-up(xl) {
+      height: 221px;
+    }
+  }
+}
+
+.progress-card {
+  .card-body {
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 16px;
+      align-items: center;
+    }
+    @include media-breakpoint-up(xxl) {
+      gap: 40px;
+    }
+  }
+  .progress-num {
+    width: 37px;
+    margin-left: 4px;
+    @include media-breakpoint-up(xxl) {
+      width: 48px;
+      margin-left: 0;
+    }
+  }
+}
+
+#card-box-swiper {
+  &.swiper {
+    overflow: visible;
+    @include media-breakpoint-up(sm) {
+      overflow: hidden;
+    }
+  }
+  .swiper-slide {
+    width: 244px;
+    @include media-breakpoint-up(md) {
+      width: 216px;
+    }
+    @include media-breakpoint-up(lg) {
+      width: 296px;
+    }
+    @include media-breakpoint-up(xl) {
+      width: 356px;
+    }
+    @include media-breakpoint-up(xxl) {
+      width: 416px;
+    }
+  }
+  .cover-img {
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+    object-position: center;
+    @include media-breakpoint-up(xl) {
+      height: 266px;
+    }
+  }
+}
+
+#current-cards-swiper {
+  .swiper-wrapper {
+    height: 626px;
+    @include media-breakpoint-up(xl) {
+      width: 706px;
+    }
+  }
+}

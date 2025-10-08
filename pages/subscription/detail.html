@@ -3,11 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Cardle</title>
   </head>
   <body>
-    <h1>訂閱方案</h1>
+    <%- include('./layout/header'); -%>
+    <section class="bg-gray-98 py-md-25 py-20">
+      <div class="container text-center">
+        <h1 class="fs-md-5xl fs-4 pb-6 border-bottom mb-6">選擇適合你的使用方案</h1>
+        <div class="mb-6">
+          <span class="fs-md-2xl fs-s badge text-tag-secondary bg-tag-secondary-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 簡單起步</span>
+          <span class="fs-md-2xl fs-s badge text-tag-orange bg-tag-orange-bg py-md-2 px-md-4 py-1 px-2 me-6 rounded-1"># 彈性升級</span>
+          <span class="fs-md-2xl fs-s badge text-tag-success bg-tag-success-bg py-md-2 px-md-4 py-1 px-2 rounded-1"># 讓筆記陪你成長</span>
+        </div>
+        <p class="fs-md-2xl fs-l fw-bold mb-md-20 mb-10 d-flex flex-column flex-md-row justify-content-center align-items-center text-center" >無論你是學生還是專業人士，<br class="d-md-none">我們都有適合你的方案。</p>
+      </div>
+        <div class="plan-swiper swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Free</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">免費方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 0</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span>
+                      <span class="text-gray-1000">標籤分類</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">立即註冊</a>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-2 border-secondary rounded-4 shadow d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Pro</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">標籤分類</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">視覺化關聯地圖</span>
+                    </li>
+                    <li>
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">進度追蹤與提醒</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-secondary py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案（推薦）</a>
+              </div>
+            </div>
+              <!-- Slide 3 -->
+            <div class="swiper-slide  col-md-4 col-12 h-auto">
+              <div class="bg-gray-0 p-6 border border-gray-100 rounded-4 d-flex flex-column h-100">
+                <div>
+                  <div class="pb-6 border-bottom border-gray-400 mb-8">
+                    <div class="d-flex justify-content-between mb-6">
+                      <span class="badge bg-secondary text-gray-0 border border-gray-500 px-md-4 fs-s fs-md-l">Pro</span>
+                      <span class="fs-s fs-md-l fw-bold text-gray-500">月繳方案</span>
+                    </div>
+                    <h3 class="text-start">
+                      <span class="text-gray-1000 fs-4xl fs-md-5xl">NT$ 120</span>
+                      <span class="text-gray-500 lh-base fw-normal fs-m fs-md-xl">/ 月</span>
+                    </h3>
+                  </div>
+                  <ul class="list-unstyled mb-8 text-start">
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立筆記卡片</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">無限制建立書單</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">標籤分類</span>
+                    </li>
+                    <li class="mb-3">
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">視覺化關聯地圖</span>
+                    </li>
+                    <li>
+                      <span class="material-symbols-outlined align-bottom text-secondary me-4"> check </span
+                      ><span class="text-gray-1000">進度追蹤與提醒</span>
+                    </li>
+                  </ul>
+                </div>
+                <a href="#" class="btn btn-outline-gray-400 py-md-4 mt-auto w-100 fs-md-5 fs-6">升級方案</a>
+              </div>           
+            </div>            
+          </div>
+        </div> 
+    </section>
+    <section class="faq py-md-25 py-20">
+      <div class="container">
+        <h2 class="fs-md-5xl fs-4 pb-6 border-bottom text-center">FAQ</h2>
+      </div> 
+      <div class="faq-area">
+        <div class="container">
+          <div class="background-blocks">
+              <img class="colorblocks top-right"  src="../../assets/images/detail/deco1.svg" alt="">
+              <img class="colorblocks bottom-left" src="../../assets/images/detail/deco2.svg" alt="">
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-11  py-md-20 py-10">
+                  <div class="accordion" id="faqAccordion">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item mb-6 py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center text-gray-900 fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq1" 
+                              aria-expanded="false" 
+                              aria-controls="faq1">
+                        <strong class="title">我想進一步了解方案，可以說明方案的詳細內容嗎？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq1" class="collapse faq-answer mt-2 accordion-body" data-bs-parent="#faqAccordion">
+                        <p class="mb-1">月繳方案：可以隨時取消，下個月不再自動續費。</p>
+                        <p class="mb-0">年繳方案：購買後會持續提供一年服務，中途不提供退款。</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item mb-6 py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq2" 
+                              aria-expanded="false" 
+                              aria-controls="faq2">
+                        <strong class="title">我可以隨時變更方案嗎？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq2" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">可以。您可以隨時升級或降級方案，新的方案會在下個週期生效。</p>
+                      </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item py-6 mb-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq3" 
+                              aria-expanded="false" 
+                              aria-controls="faq3">
+                        <strong class="title">什麼方案適合我？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq3" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">目前支援信用卡付款（Visa、Mastercard、JCB），以及部分電子支付。</p>
+                      </div>
+                    </div>
+                    <!-- FAQ 4 -->
+                    <div class="faq-item py-6 fs-md-5 fs-6">
+                      <button class="faq-question w-100 d-flex justify-content-between align-items-center fs-md-5 fs-6" 
+                              data-bs-toggle="collapse" 
+                              data-bs-target="#faq4" 
+                              aria-expanded="false" 
+                              aria-controls="faq3">
+                        <strong class="title">卡片數量與書單數量的上限分別是多少？</strong>
+                        <span class="faq-icon material-symbols-outlined">chevron_right</span>
+                      </button>
+                      <div id="faq4" class="collapse faq-answer mt-2" data-bs-parent="#faqAccordion">
+                        <p class="mb-0">目前支援信用卡付款（Visa、Mastercard、JCB），以及部分電子支付。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>     
+            </div>
+        </div> 
+      </div>
+    </section>
+    <section class="calltoactionarea">
+    <div class="d-flex flex-column flex-md-row justify-content-center align-items-center text-center p-2">
+      <h3 class="fw-bold fs-md-4xl fs-5 me-md-10 me-0 mb-md-0 mb-10">
+        現在就開始你的學習旅程，<br class="d-lg-none">打造你的知識網絡！
+      </h3>
+          <a href="#" class="btn btn-primary ms-md-3 fs-md-5 fs-6">
+            立即開始
+          </a>
+        </div>
+    </section>
+    <%- include('./layout/footer'); -%>
+
+
+
+
 
     <script type="module" src="../../main.js"></script>
+    <script type="module">
+      // import Swiper bundle with all modules installed
+      import Swiper from 'swiper/bundle';
+
+      // import styles bundle
+      import 'swiper/css/bundle';
+
+      // init Swiper:
+      const planSwiper = new Swiper('.plan-swiper', {
+        initialSlide: 2,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 40,
+        centerInsufficientSlides: true, // 不足時置中顯示（不需要捲動）
+        centeredSlidesBounds: true, // 夾住邊界，避免左右多餘空隙
+        resistanceRatio: 0, // 拖到邊界不會被「拉動」
+        watchOverflow: true, // 不足以滾動時自動停用滑動
+        breakpoints: {
+          320: {
+            spaceBetween: 24,
+          },
+          992: {
+            spaceBetween: 40
+          }
+        },
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const faqAccordion = document.getElementById('faqAccordion');
+
+        if (faqAccordion) {
+            // 展開：立即添加 class
+            faqAccordion.addEventListener('show.bs.collapse', function (event) {
+                const faqItem = event.target.closest('.faq-item');
+                faqItem && faqItem.classList.add('expanded');
+            });
+
+            // 收合：延遲移除 expanded class
+            faqAccordion.addEventListener('hide.bs.collapse', function (event) {
+                const faqItem = event.target.closest('.faq-item');
+                
+                if (faqItem) {
+                    // 延遲 50 毫秒 (0.05s)
+                    setTimeout(() => {
+                        faqItem.classList.remove('expanded');
+                    }, 300); 
+                }
+            });
+        }
+          });
+      </script>
   </body>
 </html>

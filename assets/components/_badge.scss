@@ -1,0 +1,25 @@
+.badge-lg {
+  --bs-badge-padding-y: 0.5rem;
+  --bs-badge-padding-x: 1rem;
+}
+
+.badge-secondary {
+  --bs-badge-color: #{$tag-secondary};
+  background-color: $tag-secondary-bg;
+}
+.badge-success {
+  --bs-badge-color: #{$tag-success};
+  background-color: $tag-success-bg;
+}
+.badge-orange {
+  --bs-badge-color: #{$tag-orange};
+  background-color: $tag-orange-bg;
+}
+.badge-gray {
+  --bs-badge-color: #{$tag-gray};
+  background-color: $tag-gray-bg;
+}
+.badge-gray-light {
+  --bs-badge-color: #{$gray-600};
+  background-color: $gray-0;
+}
